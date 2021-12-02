@@ -1,0 +1,424 @@
+train size classification  =  (2306,)
+test size classification  =  (272,)
+params= {'nb_conv_layers_1': 3, 'nb_dense_layers_1': 1, 'nb_filters_1': 48, 'filter_size_1': 3, 'pool_size_1': 2, 'nb_dense_nodes_1': 384, 'dropout_proba_1': 0.5, 'learn_rate_adam_1': 0.00031622776601683794, 'beta_1_1': 0.95, 'beta_2_1': 0.999, 'epsilon_1': 1e-08, 'min_delta_1': 0.005, 'patience_1': 15, 'batchsize_1': 128, 'nb_conv_layers_2': 2, 'nb_dense_layers_2': 2, 'nb_filters_2': 24, 'filter_size_2': 4, 'pool_size_2': 2, 'nb_dense_nodes_2': 320, 'dropout_proba_2': 0.6, 'learn_rate_adam_2': 0.003727593720314938, 'beta_1_2': 0.9, 'beta_2_2': 0.999, 'epsilon_2': 1e-08, 'min_delta_2': 5e-05, 'patience_2': 20, 'batchsize_2': 192, 'win_size': 0.23, 'chunk_size': 0, 'max_freq': 270, 'min_freq': 10, 'mean_log_mag': 0.5, 'slice_scale': 0.02322, 'overlap': 0.75, 'crop_spec': True, 'denoise': True, 'smooth_spec': True, 'nms_win_size': 21, 'smooth_op_prediction_sigma': 1.0335917312661498, 'num_hnm': 0}
+--------------
+Confusion matrix detect + classif
+--------------
+[[1292149       0       0       0       0       0       0       0]
+ [    109       0       0       0       0       0       0       0]
+ [   1745       0       0       0       0       0       0       0]
+ [   2120       0       0       0       0       0       0       0]
+ [    482       0       0       0       0       0       0       0]
+ [    882       0       0       0       0       0       0       0]
+ [    171       0       0       0       0       0       0       0]
+ [    396       0       0       0       0       0       0       0]]
+--------------
+Class 0 detect + classif
+--------------
+Accuracy 0.9954508826289199
+Precision 0.9954508826289199
+Recall 1.0
+F1 0.9977202559027227
+BCR 0.5
+
+--------------
+Class 1 detect + classif
+--------------
+Accuracy 0.9999160281467488
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 2 detect + classif
+--------------
+Accuracy 0.9986556799640076
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 3 detect + classif
+--------------
+Accuracy 0.9983667859734648
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 4 detect + classif
+--------------
+Accuracy 0.9996286749241557
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 5 detect + classif
+--------------
+Accuracy 0.9993205213342434
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 6 detect + classif
+--------------
+Accuracy 0.9998682643403125
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 7 detect + classif
+--------------
+Accuracy 0.9996949279459868
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+GLOBAL detect + classif
+--------------
+Average Accuracy 0.99886272065723
+Average Precision nan
+Average Recall 0.125
+Average F1 nan
+Average BCR 0.5
+KAPPA 0.0 \\
+CEN 0.0066000382106875775 \\
+--------------
+Confusion matrix detect
+--------------
+[[1292149       0]
+ [   5905       0]]
+--------------
+Class 0 detect
+--------------
+Accuracy 0.9954508826289199
+Precision 0.9954508826289199
+Recall 1.0
+F1 0.9977202559027227
+BCR 0.5
+
+--------------
+Class 1 detect
+--------------
+Accuracy 0.9954508826289199
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+GLOBAL detect
+--------------
+Average Accuracy 0.9954508826289199
+Average Precision nan
+Average Recall 0.5
+Average F1 nan
+Average BCR 0.5
+KAPPA 0.0 \\
+CEN 0.019963602319402814 \\
+--------------
+Confusion matrix classif
+--------------
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+--------------
+Class 1 classif
+--------------
+Accuracy nan
+Precision nan
+Recall nan
+F1 nan
+BCR nan
+
+--------------
+Class 2 classif
+--------------
+Accuracy nan
+Precision nan
+Recall nan
+F1 nan
+BCR nan
+
+--------------
+Class 3 classif
+--------------
+Accuracy nan
+Precision nan
+Recall nan
+F1 nan
+BCR nan
+
+--------------
+Class 4 classif
+--------------
+Accuracy nan
+Precision nan
+Recall nan
+F1 nan
+BCR nan
+
+--------------
+Class 5 classif
+--------------
+Accuracy nan
+Precision nan
+Recall nan
+F1 nan
+BCR nan
+
+--------------
+Class 6 classif
+--------------
+Accuracy nan
+Precision nan
+Recall nan
+F1 nan
+BCR nan
+
+--------------
+Class 7 classif
+--------------
+Accuracy nan
+Precision nan
+Recall nan
+F1 nan
+BCR nan
+
+--------------
+GLOBAL classif
+--------------
+Average Accuracy nan
+Average Precision nan
+Average Recall nan
+Average F1 nan
+Average BCR nan
+KAPPA nan \\
+CEN nan \\
+train size classification  =  (2306,)
+test size classification  =  (272,)
+params= {'nb_conv_layers_1': 3, 'nb_dense_layers_1': 1, 'nb_filters_1': 48, 'filter_size_1': 3, 'pool_size_1': 2, 'nb_dense_nodes_1': 384, 'dropout_proba_1': 0.5, 'learn_rate_adam_1': 0.00031622776601683794, 'beta_1_1': 0.95, 'beta_2_1': 0.999, 'epsilon_1': 1e-08, 'min_delta_1': 0.005, 'patience_1': 15, 'batchsize_1': 128, 'nb_conv_layers_2': 2, 'nb_dense_layers_2': 2, 'nb_filters_2': 24, 'filter_size_2': 4, 'pool_size_2': 2, 'nb_dense_nodes_2': 320, 'dropout_proba_2': 0.6, 'learn_rate_adam_2': 0.003727593720314938, 'beta_1_2': 0.9, 'beta_2_2': 0.999, 'epsilon_2': 1e-08, 'min_delta_2': 5e-05, 'patience_2': 20, 'batchsize_2': 192, 'win_size': 0.23, 'chunk_size': 0, 'max_freq': 270, 'min_freq': 10, 'mean_log_mag': 0.5, 'slice_scale': 0.02322, 'overlap': 0.75, 'crop_spec': True, 'denoise': True, 'smooth_spec': True, 'nms_win_size': 21, 'smooth_op_prediction_sigma': 1.0335917312661498, 'num_hnm': 0}
+--------------
+Confusion matrix detect + classif
+--------------
+[[1239412   49657       0       0       0       0       0       0]
+ [      0     109       0       0       0       0       0       0]
+ [      0    2633       0       0       0       0       0       0]
+ [      0    3273       0       0       0       0       0       0]
+ [      0     739       0       0       0       0       0       0]
+ [      0    1349       0       0       0       0       0       0]
+ [      0     271       0       0       0       0       0       0]
+ [      0     611       0       0       0       0       0       0]]
+--------------
+Class 0 detect + classif
+--------------
+Accuracy 0.9617450429643143
+Precision 1.0
+Recall 0.9614784003028543
+F1 0.9803609360718946
+BCR 0.9807392001514271
+
+--------------
+Class 1 detect + classif
+--------------
+Accuracy 0.9549071148041607
+Precision 0.0018587360594795538
+Recall 1.0
+F1 0.0037105751391465678
+BCR 0.9774516639765167
+
+--------------
+Class 2 detect + classif
+--------------
+Accuracy 0.9979715789944024
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 3 detect + classif
+--------------
+Accuracy 0.9974785332505427
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 4 detect + classif
+--------------
+Accuracy 0.9994306862426371
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 5 detect + classif
+--------------
+Accuracy 0.9989607520180208
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 6 detect + classif
+--------------
+Accuracy 0.9997912259428344
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 7 detect + classif
+--------------
+Accuracy 0.999529295391409
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+GLOBAL detect + classif
+--------------
+Average Accuracy 0.9887267787010401
+Average Precision nan
+Average Recall 0.24518480003785678
+Average F1 nan
+Average BCR 0.619773858015993
+KAPPA 0.12918264666256493 \\
+CEN 0.034112429179024115 \\
+--------------
+Confusion matrix detect
+--------------
+[[1239412   49657]
+ [      0    8985]]
+--------------
+Class 0 detect
+--------------
+Accuracy 0.9617450429643143
+Precision 1.0
+Recall 0.9614784003028543
+F1 0.9803609360718946
+BCR 0.9807392001514271
+
+--------------
+Class 1 detect
+--------------
+Accuracy 0.9617450429643143
+Precision 0.15321783022407148
+Recall 1.0
+F1 0.2657222706907005
+BCR 0.9807392001514271
+
+--------------
+GLOBAL detect
+--------------
+Average Accuracy 0.9617450429643143
+Average Precision 0.5766089151120357
+Average Recall 0.9807392001514271
+Average F1 0.6230416033812975
+Average BCR 0.9807392001514271
+KAPPA 0.2568005349136094 \\
+CEN 0.1169785376929095 \\
+--------------
+Confusion matrix classif
+--------------
+[[ 109    0    0    0    0    0    0]
+ [2633    0    0    0    0    0    0]
+ [3273    0    0    0    0    0    0]
+ [ 739    0    0    0    0    0    0]
+ [1349    0    0    0    0    0    0]
+ [ 271    0    0    0    0    0    0]
+ [ 611    0    0    0    0    0    0]]
+--------------
+Class 1 classif
+--------------
+Accuracy 0.01213132999443517
+Precision 0.01213132999443517
+Recall 1.0
+F1 0.023971849571145808
+BCR 0.5
+
+--------------
+Class 2 classif
+--------------
+Accuracy 0.7069560378408458
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 3 classif
+--------------
+Accuracy 0.6357262103505843
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 4 classif
+--------------
+Accuracy 0.9177518085698386
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 5 classif
+--------------
+Accuracy 0.8498608792431831
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 6 classif
+--------------
+Accuracy 0.9698386199220924
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+Class 7 classif
+--------------
+Accuracy 0.931997774067891
+Precision nan
+Recall 0.0
+F1 nan
+BCR 0.5
+
+--------------
+GLOBAL classif
+--------------
+Average Accuracy 0.7177518085698386
+Average Precision nan
+Average Recall 0.14285714285714285
+Average F1 nan
+Average BCR 0.5
+KAPPA 0.0 \\
+CEN 0.3054482467141699 \\
