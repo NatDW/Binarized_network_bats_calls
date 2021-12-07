@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import class_weight
 import gc
 
-from data_set_params import DataSetParams
+from batML_main.batML_multiclass.data_set_params import DataSetParams
 
 def tune_svm(params, feat_train, labels, trials_filename):
     """

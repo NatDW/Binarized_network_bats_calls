@@ -6,10 +6,11 @@ import joblib
 import gc
 import os
 
-from models_params_helper import params_to_dict
-import evaluate as evl
-from data_set_params import DataSetParams
-import classifier as clss
+import batML_main
+from batML_main.batML_multiclass.models_params_helper import params_to_dict
+import batML_main.batML_multiclass.evaluate as evl
+from batML_main.batML_multiclass.data_set_params import DataSetParams
+from batML_main.batML_multiclass import classifier as clss
 
 def load_data(data_set, goal):
     """

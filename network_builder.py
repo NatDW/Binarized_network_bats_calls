@@ -98,6 +98,8 @@ def quantize_network(network, input_quantizer, kernel_quantizer, kernel_constrai
         layer_class = getattr(sys.modules['larq.layers'], class_name, None)
         if layer_class is not None:
             del config["kernel_constraint"]
+            if i != len(network.layers) - 1:
+                config["activation"] = "linear"
             converted_layer = layer_class(input_quantizer=input_quantizer, kernel_quantizer=kernel_quantizer,
                                           kernel_constraint=kernel_constraint, **config)
             converted_layer.build(network.layers[i].input_shape)

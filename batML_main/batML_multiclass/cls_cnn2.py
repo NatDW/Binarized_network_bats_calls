@@ -6,10 +6,10 @@ from os import path
 import time
 import pickle
 
-import nms_cnn2 as nms
+import batML_main.batML_multiclass.nms_cnn2 as nms
 from hyperopt import hp, tpe, fmin, space_eval, Trials
-from spectrogram import compute_features_spectrogram
-from cnn_helper import obj_func_cnn, network_fit
+from batML_main.batML_multiclass.spectrogram import compute_features_spectrogram
+from batML_main.batML_multiclass.cnn_helper import obj_func_cnn, network_fit
 
 
 

@@ -4,11 +4,12 @@ import os
 import time
 import tensorflow as tf
 import json
-import batML_multiclass.evaluate as evl
+import batML_main.batML_multiclass.evaluate as evl
 import joblib
-from batML_multiclass.data_set_params import DataSetParams
+from network_builder import quantize_network as quant
+from batML_main.batML_multiclass.data_set_params import DataSetParams
 from tensorflow.keras.models import load_model, Model
-import batML_multiclass.classifier as clss
+import batML_main.batML_multiclass.classifier as clss
 import xgboost as xgb
 
 
@@ -76,11 +77,11 @@ if __name__ == "__main__":
     load_features_from_file = False
     model_name = "batmen"  # can be one of: 'batmen', 'cnn2',  'hybrid_cnn_svm', 'hybrid_cnn_xgboost', 'hybrid_call_svm', 'hybrid_call_xgboost'
     result_dir = 'results/'  # where we will store the outputs
-    model_dir = 'data/models/'
+    model_dir = 'batML_main/batML_multiclass/data/models/'
 
     test_set = 'Natagora'
-    data_set_test = 'data/train_test_split/test_set_' + test_set + '.npz'
-    raw_audio_dir_detect = '/home/ldierckx/Memoire/TFE/batML_batmen_improved/bat_train/data/wav/'
+    data_set_test = '/home/ndewinter/data/train_test_split/test_set_' + test_set + '.npz'
+    raw_audio_dir_detect = '/home/ndewinter/data/wav/'
     raw_audio_dir_classif = '/storage/wav/'
 
     if on_GPU:
@@ -175,9 +176,9 @@ if __name__ == "__main__":
 
     if model_name in ["batmen", "cnn2", "hybrid_cnn_svm", "hybrid_cnn_xgboost", "hybrid_call_svm",
                       "hybrid_call_xgboost"]:
-        model_cls.model.network_classif = network_classif
+        model_cls.model.network_classif = quant(network_classif, "ste_sign", "ste_sign", "weight_clip")
     if model_name in ["cnn2", "hybrid_call_svm", "hybrid_call_xgboost"]:
-        model_cls.model.network_detect = network_detect
+        model_cls.model.network_detect = quant(network_detect, "ste_sign", "ste_sign", "weight_clip")
     if model_name in ["hybrid_cnn_svm", "hybrid_cnn_xgboost"]:
         model_cls.model.network_features = network_features
         model_cls.model.model_feat = network_feat

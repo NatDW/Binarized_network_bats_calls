@@ -11,12 +11,12 @@ from sklearn.utils import class_weight
 from sklearn.svm import SVC
 import xgboost as xgb
 
-import nms_cnn2 as nms
-from spectrogram import compute_features_spectrogram
-from call_features import compute_features_call
-from cnn_helper import tune_network, network_fit
-from svm_xgb_helper import tune_svm, tune_xgb
-from models_params_helper import params_to_dict
+import batML_main.batML_multiclass.nms_cnn2 as nms
+from batML_main.batML_multiclass.spectrogram import compute_features_spectrogram
+from batML_main.batML_multiclass.call_features import compute_features_call
+from batML_main.batML_multiclass.cnn_helper import tune_network, network_fit
+from batML_main.batML_multiclass.svm_xgb_helper import tune_svm, tune_xgb
+from batML_main.batML_multiclass.models_params_helper import params_to_dict
 
 
 class NeuralNet:

@@ -1,7 +1,7 @@
 import numpy as np
 from skimage.util.shape import view_as_windows
 
-import spectrogram as sp
+import batML_main.batML_multiclass.spectrogram as sp
 
 
 def compute_features_call(audio_samples, sampling_rate, params):

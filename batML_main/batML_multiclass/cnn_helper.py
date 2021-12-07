@@ -6,8 +6,8 @@ from hyperopt import hp, tpe, fmin, space_eval, Trials
 import pickle
 import gc
 
-from data_set_params import DataSetParams
-from models_params_helper import params_to_dict
+from batML_main.batML_multiclass.data_set_params import DataSetParams
+from batML_main.batML_multiclass.models_params_helper import params_to_dict
 
 def build_cnn(params, ip_size, nb_output, nb_cnn):
     """
