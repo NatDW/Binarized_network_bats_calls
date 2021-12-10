@@ -6,7 +6,6 @@ import joblib
 import gc
 import os
 
-import batML_main
 from batML_main.batML_multiclass.models_params_helper import params_to_dict
 import batML_main.batML_multiclass.evaluate as evl
 from batML_main.batML_multiclass.data_set_params import DataSetParams
@@ -187,18 +186,18 @@ if __name__ == '__main__':
     ####################################
     on_GPU = True   # True if tensorflow runs on GPU, False otherwise
     # the name of the datasets used for detection and classification
-    test_set_detect = '' 
-    test_set_classif = ''
+    test_set_detect = 'uk'
+    test_set_classif = 'Natagora'
     # the path to the npz files used for detection and classification
-    data_set_detect = '' 
-    data_set_classif = ''
+    data_set_detect = '/home/ndewinter/data/train_test_split/test_set_'+test_set_detect+'.npz'
+    data_set_classif = '/home/ndewinter/data/train_test_split/test_set_'+test_set_classif+'.npz'
     # the path to the directories containing the detection and classification audio files
-    raw_audio_dir_detect = ''
-    raw_audio_dir_classif = ''
+    raw_audio_dir_detect = '/home/ndewinter/data/wav/'
+    raw_audio_dir_classif = '/storage/wav/'
     # the path to the directories in which the results, the models and the features will be saved
-    result_dir = 'results/'
-    model_dir = 'data/models/'
-    feature_dir = 'data/features/'
+    result_dir = '/home/ndewinter/results/'
+    model_dir = '/home/ndewinter/models/'
+    feature_dir = '/home/ndewinter/features/'
     if not os.path.isdir(result_dir):
         os.mkdir(result_dir)
     if not os.path.isdir(model_dir):
@@ -264,6 +263,7 @@ if __name__ == '__main__':
     
     # save the model and evaluate its performance
     save_model(model_name, model, model_dir)
+    model.model.network_classif.summary()
     evl.prec_recall_1d( nms_pos, nms_prob, test_pos_classif, pred_classes, test_classes_classif, test_durations_classif, model.params.detection_overlap,
                         model.params.window_size, nb_windows, model_dir + model.params.model_identifier_classif + '_perf_params.txt')
 

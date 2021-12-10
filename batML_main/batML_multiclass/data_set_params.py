@@ -33,7 +33,7 @@ class DataSetParams:
         self.save_features_to_file = False # True to compute and save the features
         self.load_features_from_file = True # True to load the features instead of computing them
 
-        self.num_hard_negative_mining = 0
+        self.num_hard_negative_mining = 2
 
         # non max suppression - smoothing and window
         self.smooth_op_prediction = True  # smooth the op parameters before nms
@@ -41,9 +41,9 @@ class DataSetParams:
         self.nms_win_size = int(np.round(0.12 / self.time_per_slice))  #ie 21 samples at 0.02322 fft win size, 0.75 overlap
 
         # tuning hyperopt
-        self.tune_cnn_8 = False
-        self.tune_cnn_2 = False
-        self.tune_cnn_7 = False
+        self.tune_cnn_8 = True
+        self.tune_cnn_2 = True
+        self.tune_cnn_7 = True
         self.tune_svm_spectrogram = False
         self.tune_svm_call = False
         self.tune_xgboost_spectrogram = False
@@ -78,8 +78,8 @@ class DataSetParams:
         Sets the name of the tuning file corresponding to the chosen model.
         """
 
-        self.trials_filename_1 = "results/"
-        self.trials_filename_2 = "results/"
+        self.trials_filename_1 = "/home/ndewinter/results/"
+        self.trials_filename_2 = "/home/ndewinter/results/"
         if self.classification_model == "batmen":
             self.trials_filename_1 += "trials_"+self.classification_model
         elif self.classification_model == "cnn2":
@@ -110,9 +110,9 @@ class DataSetParams:
             'hybrid_call_svm', 'hybrid_call_xgboost'.
         """
         
-        filename_cnn = "data/cnn_params.csv"
-        filename_svm = "data/svm_params.csv"
-        filename_xgboost = "data/xgboost_params.csv"
+        filename_cnn = "/home/ndewinter/code/batML_main/batML_multiclass/data/cnn_params.csv"
+        filename_svm = "/home/ndewinter/code/batML_main/batML_multiclass/data/svm_params.csv"
+        filename_xgboost = "/home/ndewinter/code/batML_main/batML_multiclass/data/xgboost_params.csv"
         dict_cnn = self.load_params(filename_cnn)
         dict_svm = self.load_params(filename_svm)
         dict_xgboost = self.load_params(filename_xgboost)

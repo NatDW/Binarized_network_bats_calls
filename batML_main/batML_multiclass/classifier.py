@@ -6,7 +6,7 @@ import batML_main.batML_multiclass.cls_cnn as cls_cnn
 import batML_main.batML_multiclass.cls_cnn2 as cls_cnn2
 import batML_main.batML_multiclass.cls_hybrid_cnn as cls_hybrid_cnn
 import batML_main.batML_multiclass.cls_hybrid_call as cls_hybrid_call
-from batML_main.batML_multiclass.run_training import save_model
+from run_training import save_model
 
 
 class Classifier:

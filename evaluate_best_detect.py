@@ -3,6 +3,7 @@ import pickle
 import os
 import time
 import tensorflow as tf
+import larq
 import json
 import batML_main.batML_multiclass.evaluate as evl
 import joblib
@@ -77,7 +78,7 @@ if __name__ == "__main__":
     load_features_from_file = False
     model_name = "batmen"  # can be one of: 'batmen', 'cnn2',  'hybrid_cnn_svm', 'hybrid_cnn_xgboost', 'hybrid_call_svm', 'hybrid_call_xgboost'
     result_dir = 'results/'  # where we will store the outputs
-    model_dir = 'batML_main/batML_multiclass/data/models/'
+    model_dir = '/home/ndewinter/models/'
 
     test_set = 'Natagora'
     data_set_test = '/home/ndewinter/data/train_test_split/test_set_' + test_set + '.npz'
@@ -98,11 +99,16 @@ if __name__ == "__main__":
     _, _, _, _, pos_test, files_test, durations_test, classes_test = load_data(data_set_test, "classification")
 
     # model name and load models
-    if model_name == "batmen":
+    """if model_name == "batmen":
         date = "23_04_21_09_37_13_"
         hnm = "_hnm1"
         model_file_classif = model_dir + date + "classif_" + model_name + hnm
-        network_classif = load_model(model_file_classif + '_model')
+        network_classif = load_model(model_file_classif + '_model')"""
+    if model_name == "batmen":
+        date = "08_12_21_20_30_11_"
+        hnm = "_hnm0"
+        model_file_classif = model_dir + date + "classif_" + "batmen" + hnm
+        network_classif = load_model(model_file_classif + "_model")
     elif model_name == "cnn2":
         date = "23_04_21_14_51_55_"
         hnm = "_hnm0"
@@ -176,9 +182,9 @@ if __name__ == "__main__":
 
     if model_name in ["batmen", "cnn2", "hybrid_cnn_svm", "hybrid_cnn_xgboost", "hybrid_call_svm",
                       "hybrid_call_xgboost"]:
-        model_cls.model.network_classif = quant(network_classif, "ste_sign", "ste_sign", "weight_clip")
+        model_cls.model.network_classif = network_classif
     if model_name in ["cnn2", "hybrid_call_svm", "hybrid_call_xgboost"]:
-        model_cls.model.network_detect = quant(network_detect, "ste_sign", "ste_sign", "weight_clip")
+        model_cls.model.network_detect = network_detect
     if model_name in ["hybrid_cnn_svm", "hybrid_cnn_xgboost"]:
         model_cls.model.network_features = network_features
         model_cls.model.model_feat = network_feat

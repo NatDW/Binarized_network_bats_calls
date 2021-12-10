@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+from larq.layers import QuantConv2D, QuantDense
 from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout
 from sklearn.utils import class_weight
 from hyperopt import hp, tpe, fmin, space_eval, Trials
@@ -37,20 +38,23 @@ def build_cnn(params, ip_size, nb_output, nb_cnn):
     pool_size = getattr(params, "pool_size"+nb_cnn)
     nb_dense_nodes = getattr(params, "nb_dense_nodes"+nb_cnn)
     dropout_proba = getattr(params, "dropout_proba"+nb_cnn)
+    kwargs = dict(use_bias=True, input_quantizer='ste_sign', kernel_quantizer='ste_sign',
+                                    kernel_constraint='weight_clip')
 
     net = tf.keras.models.Sequential()
-    net.add(Conv2D(nb_filters, (filter_size,filter_size), padding="same",
-                                        activation='relu', input_shape=(ip_size[0], ip_size[1], 1)))
+    net.add(QuantConv2D(nb_filters, (filter_size,filter_size), padding="same",
+                                        activation='linear', input_shape=(ip_size[0], ip_size[1], 1),
+                                        kernel_quantizer='ste_sign', kernel_constraint='weight_clip'))
     net.add(MaxPool2D(pool_size=(pool_size, pool_size)))
     for i in range(nb_conv_layers):
-        net.add(Conv2D(nb_filters, (filter_size,filter_size), padding="same", activation='relu'))
+        net.add(QuantConv2D(nb_filters, (filter_size,filter_size), padding="same", activation='linear', **kwargs))
         net.add(MaxPool2D(pool_size=(pool_size, pool_size)))
     net.add(Dropout(dropout_proba))
     net.add(Flatten())
     for i in range(nb_dense_layers):
-        net.add(Dense(nb_dense_nodes, activation='relu'))
+        net.add(QuantDense(nb_dense_nodes, activation='linear', **kwargs))
         net.add(Dropout(dropout_proba))
-    net.add(Dense(nb_output, activation='softmax'))
+    net.add(QuantDense(nb_output, activation='softmax', **kwargs))
     net.summary()
     return net
 
@@ -186,7 +190,7 @@ def tune_network(params, features, labels, trials_filename, goal=None):
                     'epsilon': hp.choice('epsilon', [1e-8]),
                     'min_delta': hp.choice('min_delta', [0.00005, 0.0005, 0.005]),
                     'patience': hp.choice('patience', [5, 10, 15, 20]),
-                    'batchsize': hp.choice('batchsize', range(64, 513, 64)),
+                    'batchsize': hp.choice('batchsize', range(32, 128, 8)),
                     'features': features,
                     'labels': labels,
                     'nb_output': nb_output
