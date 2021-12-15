@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 from larq.layers import QuantConv2D, QuantDense
-from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout
+from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout, BatchNormalization, Activation
 from sklearn.utils import class_weight
 from hyperopt import hp, tpe, fmin, space_eval, Trials
 import pickle
@@ -38,23 +38,28 @@ def build_cnn(params, ip_size, nb_output, nb_cnn):
     pool_size = getattr(params, "pool_size"+nb_cnn)
     nb_dense_nodes = getattr(params, "nb_dense_nodes"+nb_cnn)
     dropout_proba = getattr(params, "dropout_proba"+nb_cnn)
-    kwargs = dict(use_bias=True, input_quantizer='ste_sign', kernel_quantizer='ste_sign',
+    kwargs = dict(use_bias=False, input_quantizer='ste_sign', kernel_quantizer='ste_sign',
                                     kernel_constraint='weight_clip')
 
     net = tf.keras.models.Sequential()
     net.add(QuantConv2D(nb_filters, (filter_size,filter_size), padding="same",
                                         activation='linear', input_shape=(ip_size[0], ip_size[1], 1),
-                                        kernel_quantizer='ste_sign', kernel_constraint='weight_clip'))
+                                        kernel_quantizer='ste_sign', kernel_constraint='weight_clip', use_bias=False))
     net.add(MaxPool2D(pool_size=(pool_size, pool_size)))
+    net.add(BatchNormalization(momentum=0.9))
     for i in range(nb_conv_layers):
         net.add(QuantConv2D(nb_filters, (filter_size,filter_size), padding="same", activation='linear', **kwargs))
         net.add(MaxPool2D(pool_size=(pool_size, pool_size)))
-    net.add(Dropout(dropout_proba))
+        net.add(BatchNormalization(momentum=0.9))
+    #net.add(Dropout(0.3))
     net.add(Flatten())
     for i in range(nb_dense_layers):
         net.add(QuantDense(nb_dense_nodes, activation='linear', **kwargs))
-        net.add(Dropout(dropout_proba))
-    net.add(QuantDense(nb_output, activation='softmax', **kwargs))
+        net.add(BatchNormalization(momentum=0.9))
+        #net.add(Dropout(0.3))
+    net.add(QuantDense(nb_output, activation='linear', **kwargs))
+    net.add(BatchNormalization(momentum=0.9))
+    net.add(Activation('softmax'))
     net.summary()
     return net
 
@@ -102,7 +107,7 @@ def network_fit(params, features, labels, nb_output, nb_cnn=''):
                                     epsilon=epsilon, name="Adam")
     network.compile(optimizer=opti, loss=loss_fn, metrics=['accuracy', 'sparse_categorical_accuracy'])
     class_w = class_weight.compute_class_weight('balanced', np.unique(labels), labels)
-    callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=min_delta, patience=patience,
+    callback = tf.keras.callbacks.EarlyStopping(monitor="val_accuracy", min_delta=min_delta, patience=patience,
                                                 verbose=1, restore_best_weights=params.restore_best_weights)
     features = features.reshape(features.shape[0], features.shape[2], features.shape[3], 1)
     

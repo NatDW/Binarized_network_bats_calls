@@ -99,7 +99,7 @@ class NeuralNet:
 
         # extracting features from last layer of the features CNN
         self.model_feat = Model(inputs=self.network_features.input,
-                                outputs=self.network_features.layers[len(self.network_features.layers)-3].output)
+                                outputs=self.network_features.layers[len(self.network_features.layers)-5].output)
         features = features.reshape(features.shape[0], features.shape[2], features.shape[3], 1)
         feat_train = self.model_feat.predict(features)
 

@@ -76,9 +76,9 @@ def load_data(data_set, goal):
 if __name__ == "__main__":
     on_GPU = True
     load_features_from_file = False
-    model_name = "batmen"  # can be one of: 'batmen', 'cnn2',  'hybrid_cnn_svm', 'hybrid_cnn_xgboost', 'hybrid_call_svm', 'hybrid_call_xgboost'
+    model_name = "hybrid_cnn_xgboost"  # can be one of: 'batmen', 'cnn2',  'hybrid_cnn_svm', 'hybrid_cnn_xgboost', 'hybrid_call_svm', 'hybrid_call_xgboost'
     result_dir = 'results/'  # where we will store the outputs
-    model_dir = '/home/ndewinter/models/'
+    model_dir = '/home/ndewinter/code/batML_main/batML_multiclass/data/models/'
 
     test_set = 'Natagora'
     data_set_test = '/home/ndewinter/data/train_test_split/test_set_' + test_set + '.npz'
@@ -145,9 +145,9 @@ if __name__ == "__main__":
     elif model_name == "hybrid_call_xgboost":
         date = "23_04_21_13_51_38_"
         hnm = "_hnm0"
-        model_file_detect = model_dir + date + "detect_" + model_name
+        model_file_detect = model_dir + date + "detect_" + model_name + hnm
         network_detect = load_model(model_file_detect + '_model')
-        model_file_classif = model_dir + date + "classif_" + model_name
+        model_file_classif = model_dir + date + "classif_" + model_name + hnm
         network_classif = xgb.XGBClassifier()
         network_classif.load_model(model_file_classif + '_model.json')
 

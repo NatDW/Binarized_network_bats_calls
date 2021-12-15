@@ -117,7 +117,7 @@ def save_model(model_name, model, model_dir):
         weights = model.model.network_detect.get_weights()
         np.save(model_dir + model.params.model_identifier_detect + '_weights', weights)
     if model_name in ["batmen", "cnn2"]: # cnn classif
-        model.model.network_classif.save(model_dir + model.params.model_identifier_classif + '_model')
+        model.model.network_classif.save(model_dir + model.params.model_identifier_classif + '_model.h5')
         weights = model.model.network_classif.get_weights()
         np.save(model_dir + model.params.model_identifier_classif + '_weights', weights)
     if model_name in ["hybrid_cnn_svm", "hybrid_cnn_xgboost"]: # cnn features
@@ -204,7 +204,7 @@ if __name__ == '__main__':
         os.mkdir(model_dir)
     if not os.path.isdir(feature_dir):
         os.mkdir(feature_dir)
-    model_name = "batmen" # one of: batmen, cnn2, hybrid_cnn_svm, hybrid_cnn_xgboost,
+    model_name = "cnn2" # one of: batmen, cnn2, hybrid_cnn_svm, hybrid_cnn_xgboost,
     # hybrid_call_svm, hybrid_call_xgboost
     
     if on_GPU:
@@ -263,7 +263,7 @@ if __name__ == '__main__':
     
     # save the model and evaluate its performance
     save_model(model_name, model, model_dir)
-    model.model.network_classif.summary()
+    #model.model.network_classif.summary()
     evl.prec_recall_1d( nms_pos, nms_prob, test_pos_classif, pred_classes, test_classes_classif, test_durations_classif, model.params.detection_overlap,
                         model.params.window_size, nb_windows, model_dir + model.params.model_identifier_classif + '_perf_params.txt')
 

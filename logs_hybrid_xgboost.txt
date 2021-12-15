@@ -1,0 +1,1302 @@
+2021-12-14 12:34:39.151497: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3800000000 Hz
+2021-12-14 12:34:39.152622: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55dfc830c0a0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-12-14 12:34:39.152642: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-12-14 12:34:39.160462: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-12-14 12:34:39.817109: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55dfc82d05e0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-12-14 12:34:39.817145: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce RTX 2080 SUPER, Compute Capability 7.5
+2021-12-14 12:34:39.817475: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:65:00.0 name: NVIDIA GeForce RTX 2080 SUPER computeCapability: 7.5
+coreClock: 1.845GHz coreCount: 48 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 462.00GiB/s
+2021-12-14 12:34:39.820778: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-14 12:34:39.826273: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-14 12:34:39.834103: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-12-14 12:34:39.852971: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-12-14 12:34:39.861315: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-12-14 12:34:39.869334: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-12-14 12:34:39.876214: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-14 12:34:39.876575: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-12-14 12:34:39.876609: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-14 12:34:39.876832: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-14 12:34:39.876841: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-12-14 12:34:39.876849: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-12-14 12:34:39.877165: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7472 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2080 SUPER, pci bus id: 0000:65:00.0, compute capability: 7.5)
+
+Model: hybrid_cnn_xgboost
+test set detect: uk
+test set classif: Natagora
+Generate training positions
+Train classifier
+Compute or load features
+^[[C    ^[[D    CNN params=  {'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 14, 'n_estimators': 500, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5}
+2021-12-14 12:45:59.143536: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:65:00.0 name: NVIDIA GeForce RTX 2080 SUPER computeCapability: 7.5
+coreClock: 1.845GHz coreCount: 48 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 462.00GiB/s
+2021-12-14 12:45:59.143603: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-14 12:45:59.143619: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-14 12:45:59.143626: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-12-14 12:45:59.143634: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-12-14 12:45:59.143657: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-12-14 12:45:59.143665: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-12-14 12:45:59.143673: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-14 12:45:59.143972: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-12-14 12:45:59.144655: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:65:00.0 name: NVIDIA GeForce RTX 2080 SUPER computeCapability: 7.5
+coreClock: 1.845GHz coreCount: 48 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 462.00GiB/s
+2021-12-14 12:45:59.144689: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-14 12:45:59.144698: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-14 12:45:59.144705: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-12-14 12:45:59.144713: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-12-14 12:45:59.144721: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-12-14 12:45:59.144729: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-12-14 12:45:59.144736: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-14 12:45:59.145072: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-12-14 12:45:59.145098: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-14 12:45:59.145103: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-12-14 12:45:59.145108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-12-14 12:45:59.145399: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7472 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2080 SUPER, pci bus id: 0000:65:00.0, compute capability: 7.5)
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+quant_conv2d (QuantConv2D)   (None, 130, 20, 56)       504       
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 65, 10, 56)        0         
+_________________________________________________________________
+batch_normalization (BatchNo (None, 65, 10, 56)        224       
+_________________________________________________________________
+quant_conv2d_1 (QuantConv2D) (None, 65, 10, 56)        28224     
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 32, 5, 56)         0         
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 32, 5, 56)         224       
+_________________________________________________________________
+quant_conv2d_2 (QuantConv2D) (None, 32, 5, 56)         28224     
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 16, 2, 56)         0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 16, 2, 56)         224       
+_________________________________________________________________
+flatten (Flatten)            (None, 1792)              0         
+_________________________________________________________________
+quant_dense (QuantDense)     (None, 384)               688128    
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 384)               1536      
+_________________________________________________________________
+quant_dense_1 (QuantDense)   (None, 384)               147456    
+_________________________________________________________________
+batch_normalization_4 (Batch (None, 384)               1536      
+_________________________________________________________________
+quant_dense_2 (QuantDense)   (None, 8)                 3072      
+=================================================================
+Total params: 899,352
+Trainable params: 897,480
+Non-trainable params: 1,872
+_________________________________________________________________
+/home/ndewinter/.local/lib/python3.6/site-packages/sklearn/utils/validation.py:72: FutureWarning: Pass classes=[0 1 2 3 4 5 6 7], y=[7 7 7 ... 3 3 3] as keyword args. From version 1.0 (renaming of 0.25) passing these as positional arguments will result in an error
+  "will result in an error", FutureWarning)
+Fit the CNN
+2021-12-14 12:46:00.165794: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2909088000 exceeds 10% of free system memory.
+2021-12-14 12:46:01.545807: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 323232000 exceeds 10% of free system memory.
+Train on 279720 samples, validate on 31080 samples
+Epoch 1/200
+2021-12-14 12:46:02.680072: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-14 12:46:02.994997: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+279720/279720 - 18s - loss: 6.9148 - accuracy: 0.5991 - sparse_categorical_accuracy: 0.5991 - val_loss: 7.2503 - val_accuracy: 0.5356 - val_sparse_categorical_accuracy: 0.5356
+Epoch 2/200
+279720/279720 - 14s - loss: 5.3410 - accuracy: 0.6962 - sparse_categorical_accuracy: 0.6962 - val_loss: 5.0771 - val_accuracy: 0.7716 - val_sparse_categorical_accuracy: 0.7716
+Epoch 3/200
+279720/279720 - 14s - loss: 4.8734 - accuracy: 0.7275 - sparse_categorical_accuracy: 0.7275 - val_loss: 5.8837 - val_accuracy: 0.7660 - val_sparse_categorical_accuracy: 0.7660
+Epoch 4/200
+279720/279720 - 14s - loss: 4.4906 - accuracy: 0.7474 - sparse_categorical_accuracy: 0.7474 - val_loss: 4.6489 - val_accuracy: 0.7237 - val_sparse_categorical_accuracy: 0.7237
+Epoch 5/200
+279720/279720 - 14s - loss: 4.1961 - accuracy: 0.7592 - sparse_categorical_accuracy: 0.7592 - val_loss: 5.9267 - val_accuracy: 0.7734 - val_sparse_categorical_accuracy: 0.7734
+Epoch 6/200
+279720/279720 - 14s - loss: 3.7968 - accuracy: 0.7647 - sparse_categorical_accuracy: 0.7647 - val_loss: 8.7095 - val_accuracy: 0.6568 - val_sparse_categorical_accuracy: 0.6568
+Epoch 7/200
+279720/279720 - 14s - loss: 3.4200 - accuracy: 0.7725 - sparse_categorical_accuracy: 0.7725 - val_loss: 4.4491 - val_accuracy: 0.7576 - val_sparse_categorical_accuracy: 0.7576
+Epoch 8/200
+279720/279720 - 14s - loss: 3.2320 - accuracy: 0.7757 - sparse_categorical_accuracy: 0.7757 - val_loss: 5.4286 - val_accuracy: 0.7262 - val_sparse_categorical_accuracy: 0.7262
+Epoch 9/200
+279720/279720 - 14s - loss: 3.0693 - accuracy: 0.7817 - sparse_categorical_accuracy: 0.7817 - val_loss: 4.3822 - val_accuracy: 0.7747 - val_sparse_categorical_accuracy: 0.7747
+Epoch 10/200
+279720/279720 - 14s - loss: 2.8391 - accuracy: 0.7859 - sparse_categorical_accuracy: 0.7859 - val_loss: 4.0095 - val_accuracy: 0.7763 - val_sparse_categorical_accuracy: 0.7763
+Epoch 11/200
+279720/279720 - 14s - loss: 2.7233 - accuracy: 0.7886 - sparse_categorical_accuracy: 0.7886 - val_loss: 3.6233 - val_accuracy: 0.7929 - val_sparse_categorical_accuracy: 0.7929
+Epoch 12/200
+279720/279720 - 14s - loss: 2.6826 - accuracy: 0.7935 - sparse_categorical_accuracy: 0.7935 - val_loss: 4.0718 - val_accuracy: 0.7674 - val_sparse_categorical_accuracy: 0.7674
+Epoch 13/200
+279720/279720 - 14s - loss: 2.5585 - accuracy: 0.7974 - sparse_categorical_accuracy: 0.7974 - val_loss: 4.7564 - val_accuracy: 0.7285 - val_sparse_categorical_accuracy: 0.7285
+Epoch 14/200
+279720/279720 - 14s - loss: 2.5916 - accuracy: 0.7994 - sparse_categorical_accuracy: 0.7994 - val_loss: 3.5695 - val_accuracy: 0.7671 - val_sparse_categorical_accuracy: 0.7671
+Epoch 15/200
+279720/279720 - 14s - loss: 2.5565 - accuracy: 0.8016 - sparse_categorical_accuracy: 0.8016 - val_loss: 3.7008 - val_accuracy: 0.7933 - val_sparse_categorical_accuracy: 0.7933
+Epoch 16/200
+279720/279720 - 14s - loss: 2.4637 - accuracy: 0.8074 - sparse_categorical_accuracy: 0.8074 - val_loss: 4.4741 - val_accuracy: 0.7108 - val_sparse_categorical_accuracy: 0.7108
+Epoch 17/200
+279720/279720 - 14s - loss: 2.4385 - accuracy: 0.8081 - sparse_categorical_accuracy: 0.8081 - val_loss: 5.6632 - val_accuracy: 0.6687 - val_sparse_categorical_accuracy: 0.6687
+Epoch 18/200
+279720/279720 - 14s - loss: 2.4715 - accuracy: 0.8110 - sparse_categorical_accuracy: 0.8110 - val_loss: 3.6840 - val_accuracy: 0.7883 - val_sparse_categorical_accuracy: 0.7883
+Epoch 19/200
+279720/279720 - 14s - loss: 2.3896 - accuracy: 0.8126 - sparse_categorical_accuracy: 0.8126 - val_loss: 4.1993 - val_accuracy: 0.7782 - val_sparse_categorical_accuracy: 0.7782
+Epoch 20/200
+279720/279720 - 14s - loss: 2.4093 - accuracy: 0.8147 - sparse_categorical_accuracy: 0.8147 - val_loss: 3.2024 - val_accuracy: 0.7994 - val_sparse_categorical_accuracy: 0.7994
+Epoch 21/200
+279720/279720 - 14s - loss: 2.4557 - accuracy: 0.8152 - sparse_categorical_accuracy: 0.8152 - val_loss: 4.0032 - val_accuracy: 0.7226 - val_sparse_categorical_accuracy: 0.7226
+Epoch 22/200
+279720/279720 - 14s - loss: 2.4272 - accuracy: 0.8163 - sparse_categorical_accuracy: 0.8163 - val_loss: 3.8834 - val_accuracy: 0.7649 - val_sparse_categorical_accuracy: 0.7649
+Epoch 23/200
+279720/279720 - 14s - loss: 2.4582 - accuracy: 0.8150 - sparse_categorical_accuracy: 0.8150 - val_loss: 5.8687 - val_accuracy: 0.7529 - val_sparse_categorical_accuracy: 0.7529
+Epoch 24/200
+279720/279720 - 14s - loss: 2.3546 - accuracy: 0.8195 - sparse_categorical_accuracy: 0.8195 - val_loss: 3.4195 - val_accuracy: 0.7938 - val_sparse_categorical_accuracy: 0.7938
+Epoch 25/200
+279720/279720 - 14s - loss: 2.3751 - accuracy: 0.8201 - sparse_categorical_accuracy: 0.8201 - val_loss: 3.7258 - val_accuracy: 0.7916 - val_sparse_categorical_accuracy: 0.7916
+Epoch 26/200
+279720/279720 - 14s - loss: 2.4483 - accuracy: 0.8194 - sparse_categorical_accuracy: 0.8194 - val_loss: 3.5134 - val_accuracy: 0.7912 - val_sparse_categorical_accuracy: 0.7912
+Epoch 27/200
+279720/279720 - 14s - loss: 2.4317 - accuracy: 0.8213 - sparse_categorical_accuracy: 0.8213 - val_loss: 5.9814 - val_accuracy: 0.7333 - val_sparse_categorical_accuracy: 0.7333
+Epoch 28/200
+279720/279720 - 14s - loss: 2.3929 - accuracy: 0.8227 - sparse_categorical_accuracy: 0.8227 - val_loss: 5.2042 - val_accuracy: 0.7537 - val_sparse_categorical_accuracy: 0.7537
+Epoch 29/200
+279720/279720 - 14s - loss: 2.3338 - accuracy: 0.8229 - sparse_categorical_accuracy: 0.8229 - val_loss: 4.4542 - val_accuracy: 0.7750 - val_sparse_categorical_accuracy: 0.7750
+Epoch 30/200
+279720/279720 - 14s - loss: 2.3227 - accuracy: 0.8254 - sparse_categorical_accuracy: 0.8254 - val_loss: 4.2141 - val_accuracy: 0.7955 - val_sparse_categorical_accuracy: 0.7955
+Epoch 31/200
+279720/279720 - 14s - loss: 2.2363 - accuracy: 0.8282 - sparse_categorical_accuracy: 0.8282 - val_loss: 7.8670 - val_accuracy: 0.6259 - val_sparse_categorical_accuracy: 0.6259
+Epoch 32/200
+279720/279720 - 14s - loss: 2.3067 - accuracy: 0.8273 - sparse_categorical_accuracy: 0.8273 - val_loss: 5.0399 - val_accuracy: 0.7716 - val_sparse_categorical_accuracy: 0.7716
+Epoch 33/200
+279720/279720 - 14s - loss: 2.2963 - accuracy: 0.8291 - sparse_categorical_accuracy: 0.8291 - val_loss: 3.8982 - val_accuracy: 0.8043 - val_sparse_categorical_accuracy: 0.8043
+Epoch 34/200
+279720/279720 - 14s - loss: 2.3048 - accuracy: 0.8289 - sparse_categorical_accuracy: 0.8289 - val_loss: 4.9136 - val_accuracy: 0.7586 - val_sparse_categorical_accuracy: 0.7586
+Epoch 35/200
+279720/279720 - 14s - loss: 2.3558 - accuracy: 0.8300 - sparse_categorical_accuracy: 0.8300 - val_loss: 4.2339 - val_accuracy: 0.7834 - val_sparse_categorical_accuracy: 0.7834
+Epoch 36/200
+279720/279720 - 14s - loss: 2.2980 - accuracy: 0.8295 - sparse_categorical_accuracy: 0.8295 - val_loss: 4.3461 - val_accuracy: 0.8039 - val_sparse_categorical_accuracy: 0.8039
+Epoch 37/200
+279720/279720 - 14s - loss: 2.3117 - accuracy: 0.8312 - sparse_categorical_accuracy: 0.8312 - val_loss: 4.4165 - val_accuracy: 0.7886 - val_sparse_categorical_accuracy: 0.7886
+Epoch 38/200
+279720/279720 - 14s - loss: 2.2300 - accuracy: 0.8318 - sparse_categorical_accuracy: 0.8318 - val_loss: 5.8188 - val_accuracy: 0.7956 - val_sparse_categorical_accuracy: 0.7956
+Epoch 39/200
+279720/279720 - 14s - loss: 2.3059 - accuracy: 0.8315 - sparse_categorical_accuracy: 0.8315 - val_loss: 5.4794 - val_accuracy: 0.7689 - val_sparse_categorical_accuracy: 0.7689
+Epoch 40/200
+279720/279720 - 14s - loss: 2.2938 - accuracy: 0.8334 - sparse_categorical_accuracy: 0.8334 - val_loss: 5.0713 - val_accuracy: 0.7470 - val_sparse_categorical_accuracy: 0.7470
+Epoch 41/200
+279720/279720 - 14s - loss: 2.3506 - accuracy: 0.8330 - sparse_categorical_accuracy: 0.8330 - val_loss: 4.1327 - val_accuracy: 0.7660 - val_sparse_categorical_accuracy: 0.7660
+Epoch 42/200
+279720/279720 - 14s - loss: 2.3297 - accuracy: 0.8347 - sparse_categorical_accuracy: 0.8347 - val_loss: 10.3874 - val_accuracy: 0.6593 - val_sparse_categorical_accuracy: 0.6593
+Epoch 43/200
+279720/279720 - 14s - loss: 2.3170 - accuracy: 0.8354 - sparse_categorical_accuracy: 0.8354 - val_loss: 6.4441 - val_accuracy: 0.7837 - val_sparse_categorical_accuracy: 0.7837
+Epoch 44/200
+279720/279720 - 14s - loss: 2.3047 - accuracy: 0.8374 - sparse_categorical_accuracy: 0.8374 - val_loss: 4.5235 - val_accuracy: 0.7629 - val_sparse_categorical_accuracy: 0.7629
+Epoch 45/200
+279720/279720 - 14s - loss: 2.2461 - accuracy: 0.8366 - sparse_categorical_accuracy: 0.8366 - val_loss: 5.8362 - val_accuracy: 0.6244 - val_sparse_categorical_accuracy: 0.6244
+Epoch 46/200
+279720/279720 - 14s - loss: 2.3040 - accuracy: 0.8369 - sparse_categorical_accuracy: 0.8369 - val_loss: 4.7211 - val_accuracy: 0.7361 - val_sparse_categorical_accuracy: 0.7361
+Epoch 47/200
+279720/279720 - 14s - loss: 2.1868 - accuracy: 0.8399 - sparse_categorical_accuracy: 0.8399 - val_loss: 4.6919 - val_accuracy: 0.7850 - val_sparse_categorical_accuracy: 0.7850
+Epoch 48/200
+279720/279720 - 14s - loss: 2.3045 - accuracy: 0.8383 - sparse_categorical_accuracy: 0.8383 - val_loss: 5.6453 - val_accuracy: 0.7352 - val_sparse_categorical_accuracy: 0.7352
+Epoch 49/200
+279720/279720 - 14s - loss: 2.2678 - accuracy: 0.8390 - sparse_categorical_accuracy: 0.8390 - val_loss: 4.0810 - val_accuracy: 0.8134 - val_sparse_categorical_accuracy: 0.8134
+Epoch 50/200
+279720/279720 - 14s - loss: 2.1823 - accuracy: 0.8403 - sparse_categorical_accuracy: 0.8403 - val_loss: 4.1250 - val_accuracy: 0.7822 - val_sparse_categorical_accuracy: 0.7822
+Epoch 51/200
+279720/279720 - 14s - loss: 2.2197 - accuracy: 0.8399 - sparse_categorical_accuracy: 0.8399 - val_loss: 3.7585 - val_accuracy: 0.7984 - val_sparse_categorical_accuracy: 0.7984
+Epoch 52/200
+279720/279720 - 14s - loss: 2.2662 - accuracy: 0.8394 - sparse_categorical_accuracy: 0.8394 - val_loss: 4.8071 - val_accuracy: 0.7799 - val_sparse_categorical_accuracy: 0.7799
+Epoch 53/200
+279720/279720 - 14s - loss: 2.2432 - accuracy: 0.8401 - sparse_categorical_accuracy: 0.8401 - val_loss: 4.8700 - val_accuracy: 0.8020 - val_sparse_categorical_accuracy: 0.8020
+Epoch 54/200
+279720/279720 - 14s - loss: 2.2705 - accuracy: 0.8397 - sparse_categorical_accuracy: 0.8397 - val_loss: 3.9816 - val_accuracy: 0.8041 - val_sparse_categorical_accuracy: 0.8041
+Epoch 55/200
+279720/279720 - 14s - loss: 2.2581 - accuracy: 0.8407 - sparse_categorical_accuracy: 0.8407 - val_loss: 4.7274 - val_accuracy: 0.7937 - val_sparse_categorical_accuracy: 0.7937
+Epoch 56/200
+279720/279720 - 14s - loss: 2.2418 - accuracy: 0.8421 - sparse_categorical_accuracy: 0.8421 - val_loss: 4.3443 - val_accuracy: 0.8004 - val_sparse_categorical_accuracy: 0.8004
+Epoch 57/200
+279720/279720 - 14s - loss: 2.1967 - accuracy: 0.8441 - sparse_categorical_accuracy: 0.8441 - val_loss: 3.8601 - val_accuracy: 0.7980 - val_sparse_categorical_accuracy: 0.7980
+Epoch 58/200
+279720/279720 - 14s - loss: 2.3087 - accuracy: 0.8420 - sparse_categorical_accuracy: 0.8420 - val_loss: 4.8954 - val_accuracy: 0.7980 - val_sparse_categorical_accuracy: 0.7980
+Epoch 59/200
+279720/279720 - 14s - loss: 2.2998 - accuracy: 0.8415 - sparse_categorical_accuracy: 0.8415 - val_loss: 5.9817 - val_accuracy: 0.7566 - val_sparse_categorical_accuracy: 0.7566
+Epoch 60/200
+279720/279720 - 14s - loss: 2.2669 - accuracy: 0.8423 - sparse_categorical_accuracy: 0.8423 - val_loss: 6.6178 - val_accuracy: 0.7546 - val_sparse_categorical_accuracy: 0.7546
+Epoch 61/200
+279720/279720 - 14s - loss: 2.2316 - accuracy: 0.8418 - sparse_categorical_accuracy: 0.8418 - val_loss: 5.1818 - val_accuracy: 0.7199 - val_sparse_categorical_accuracy: 0.7199
+Epoch 62/200
+279720/279720 - 14s - loss: 2.2642 - accuracy: 0.8437 - sparse_categorical_accuracy: 0.8437 - val_loss: 7.7236 - val_accuracy: 0.5668 - val_sparse_categorical_accuracy: 0.5668
+Epoch 63/200
+279720/279720 - 14s - loss: 2.2783 - accuracy: 0.8443 - sparse_categorical_accuracy: 0.8443 - val_loss: 5.7768 - val_accuracy: 0.7703 - val_sparse_categorical_accuracy: 0.7703
+Epoch 64/200
+279720/279720 - 14s - loss: 2.3373 - accuracy: 0.8431 - sparse_categorical_accuracy: 0.8431 - val_loss: 4.1917 - val_accuracy: 0.8032 - val_sparse_categorical_accuracy: 0.8032
+Epoch 65/200
+279720/279720 - 14s - loss: 2.2522 - accuracy: 0.8429 - sparse_categorical_accuracy: 0.8429 - val_loss: 4.6245 - val_accuracy: 0.7972 - val_sparse_categorical_accuracy: 0.7972
+Epoch 66/200
+279720/279720 - 14s - loss: 2.1909 - accuracy: 0.8456 - sparse_categorical_accuracy: 0.8456 - val_loss: 4.8369 - val_accuracy: 0.8241 - val_sparse_categorical_accuracy: 0.8241
+Epoch 67/200
+279720/279720 - 14s - loss: 2.1427 - accuracy: 0.8457 - sparse_categorical_accuracy: 0.8457 - val_loss: 6.6859 - val_accuracy: 0.7035 - val_sparse_categorical_accuracy: 0.7035
+Epoch 68/200
+279720/279720 - 14s - loss: 2.2485 - accuracy: 0.8457 - sparse_categorical_accuracy: 0.8457 - val_loss: 4.7671 - val_accuracy: 0.8098 - val_sparse_categorical_accuracy: 0.8098
+Epoch 69/200
+279720/279720 - 14s - loss: 2.1478 - accuracy: 0.8463 - sparse_categorical_accuracy: 0.8463 - val_loss: 5.0042 - val_accuracy: 0.7717 - val_sparse_categorical_accuracy: 0.7717
+Epoch 70/200
+279720/279720 - 14s - loss: 2.1501 - accuracy: 0.8459 - sparse_categorical_accuracy: 0.8459 - val_loss: 4.4530 - val_accuracy: 0.8175 - val_sparse_categorical_accuracy: 0.8175
+Epoch 71/200
+279720/279720 - 14s - loss: 2.2091 - accuracy: 0.8441 - sparse_categorical_accuracy: 0.8441 - val_loss: 18.4726 - val_accuracy: 0.3810 - val_sparse_categorical_accuracy: 0.3810
+Epoch 72/200
+279720/279720 - 14s - loss: 2.2782 - accuracy: 0.8442 - sparse_categorical_accuracy: 0.8442 - val_loss: 5.3549 - val_accuracy: 0.7477 - val_sparse_categorical_accuracy: 0.7477
+Epoch 73/200
+279720/279720 - 14s - loss: 2.1211 - accuracy: 0.8474 - sparse_categorical_accuracy: 0.8474 - val_loss: 6.4768 - val_accuracy: 0.7497 - val_sparse_categorical_accuracy: 0.7497
+Epoch 74/200
+279720/279720 - 14s - loss: 2.1577 - accuracy: 0.8467 - sparse_categorical_accuracy: 0.8467 - val_loss: 5.9864 - val_accuracy: 0.7787 - val_sparse_categorical_accuracy: 0.7787
+Epoch 75/200
+279720/279720 - 14s - loss: 2.2239 - accuracy: 0.8463 - sparse_categorical_accuracy: 0.8463 - val_loss: 5.5483 - val_accuracy: 0.7855 - val_sparse_categorical_accuracy: 0.7855
+Epoch 76/200
+279720/279720 - 14s - loss: 2.1644 - accuracy: 0.8471 - sparse_categorical_accuracy: 0.8471 - val_loss: 4.7545 - val_accuracy: 0.8067 - val_sparse_categorical_accuracy: 0.8067
+Epoch 77/200
+279720/279720 - 14s - loss: 2.1975 - accuracy: 0.8469 - sparse_categorical_accuracy: 0.8469 - val_loss: 3.8112 - val_accuracy: 0.7988 - val_sparse_categorical_accuracy: 0.7988
+Epoch 78/200
+279720/279720 - 14s - loss: 2.1892 - accuracy: 0.8474 - sparse_categorical_accuracy: 0.8474 - val_loss: 6.8025 - val_accuracy: 0.7814 - val_sparse_categorical_accuracy: 0.7814
+Epoch 79/200
+279720/279720 - 14s - loss: 2.2802 - accuracy: 0.8476 - sparse_categorical_accuracy: 0.8476 - val_loss: 5.1732 - val_accuracy: 0.7763 - val_sparse_categorical_accuracy: 0.7763
+Epoch 80/200
+279720/279720 - 14s - loss: 2.1666 - accuracy: 0.8496 - sparse_categorical_accuracy: 0.8496 - val_loss: 4.5535 - val_accuracy: 0.7849 - val_sparse_categorical_accuracy: 0.7849
+Epoch 81/200
+279720/279720 - 14s - loss: 2.2433 - accuracy: 0.8504 - sparse_categorical_accuracy: 0.8504 - val_loss: 5.4405 - val_accuracy: 0.7525 - val_sparse_categorical_accuracy: 0.7525
+Epoch 82/200
+279720/279720 - 14s - loss: 2.1542 - accuracy: 0.8506 - sparse_categorical_accuracy: 0.8506 - val_loss: 4.2488 - val_accuracy: 0.7950 - val_sparse_categorical_accuracy: 0.7950
+Epoch 83/200
+279720/279720 - 14s - loss: 2.2108 - accuracy: 0.8488 - sparse_categorical_accuracy: 0.8488 - val_loss: 4.7122 - val_accuracy: 0.7819 - val_sparse_categorical_accuracy: 0.7819
+Epoch 84/200
+279720/279720 - 14s - loss: 2.2548 - accuracy: 0.8485 - sparse_categorical_accuracy: 0.8485 - val_loss: 5.4043 - val_accuracy: 0.8077 - val_sparse_categorical_accuracy: 0.8077
+Epoch 85/200
+279720/279720 - 14s - loss: 2.2436 - accuracy: 0.8479 - sparse_categorical_accuracy: 0.8479 - val_loss: 6.3570 - val_accuracy: 0.7744 - val_sparse_categorical_accuracy: 0.7744
+Epoch 86/200
+Restoring model weights from the end of the best epoch.
+279720/279720 - 14s - loss: 2.2005 - accuracy: 0.8499 - sparse_categorical_accuracy: 0.8499 - val_loss: 4.7367 - val_accuracy: 0.7994 - val_sparse_categorical_accuracy: 0.7994
+Epoch 00086: early stopping
+2021-12-14 13:06:30.023841: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 3232320000 exceeds 10% of free system memory.
+Fit xgboost
+/home/ndewinter/.local/lib/python3.6/site-packages/sklearn/utils/validation.py:72: FutureWarning: Pass classes=[0 1 2 3 4 5 6 7], y=[3 2 0 ... 2 0 0] as keyword args. From version 1.0 (renaming of 0.25) passing these as positional arguments will result in an error
+  "will result in an error", FutureWarning)
+/home/ndewinter/.local/lib/python3.6/site-packages/xgboost/sklearn.py:1224: UserWarning: The use of label encoder in XGBClassifier is deprecated and will be removed in a future release. To remove this warning, do the following: 1) Pass option use_label_encoder=False when constructing XGBClassifier object; and 2) Encode your labels (y) as integers starting with 0, i.e. 0, 1, 2, ..., [num_class - 1].
+  warnings.warn(label_encoder_deprecation_msg, UserWarning)
+[13:06:44] WARNING: ../src/learner.cc:576: 
+Parameters: { "scale_pos_weight" } might not be used.
+
+  This could be a false alarm, with some parameters getting used by language bindings but
+  then being mistakenly passed down to XGBoost core, or some parameter actually being used
+  but getting flagged wrongly here. Please open an issue if you find any such cases.
+
+
+total xgboost run time 183.933 (secs) = 3.07 min \\
+XGBoost params=  {'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 14, 'n_estimators': 220, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5}
+2021-12-14 13:09:47.919962: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 63980800 exceeds 10% of free system memory.
+2021-12-14 13:09:52.461393: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 89502400 exceeds 10% of free system memory.
+14\_12\_21\_12\_34\_39\_classif\_hybrid\_cnn\_xgboost
+2021-12-14 13:12:13.428100: W tensorflow/python/util/util.cc:319] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+WARNING:tensorflow:From /usr/local/lib64/python3.6/site-packages/tensorflow/python/ops/resource_variable_ops.py:1809: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+mod_params= {'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 14, 'n_estimators': 220, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5, 'win_size': 0.23, 'chunk_size': 0, 'max_freq': 270, 'min_freq': 10, 'mean_log_mag': 0.5, 'slice_scale': 0.02322, 'overlap': 0.75, 'crop_spec': True, 'denoise': True, 'smooth_spec': True, 'nms_win_size': 21, 'smooth_op_prediction_sigma': 1.0335917312661498, 'num_hnm': 0}
+--------------
+Confusion matrix detect + classif
+--------------
+[[1288338      22     852    2049     298     311      49     240]
+ [      2     106       0       1       0       0       0       0]
+ [    141      10    1515      41      26       5       2       3]
+ [    129       2      35    1884       9      33      11      18]
+ [     40      18      60      37     297      12       0      14]
+ [     85       1      37     115      20     616       4       2]
+ [     17       0      22      38       1      41      50       0]
+ [     50       0       9      30       0       4       0     302]]
+--------------
+Class 0 detect + classif
+--------------
+Accuracy 0.9966989046680647
+Precision 0.9996399757293983
+Recall 0.9970429335708686
+F1 0.9983397656919264
+BCR 0.9591660808651629
+
+--------------
+Class 1 detect + classif
+--------------
+Accuracy 0.9999568584974122
+Precision 0.6666666666666666
+Recall 0.9724770642201835
+F1 0.7910447761194029
+BCR 0.986218115220316
+
+--------------
+Class 2 detect + classif
+--------------
+Accuracy 0.9990424127193476
+Precision 0.5988142292490118
+Recall 0.8691910499139415
+F1 0.7091036742335595
+BCR 0.934204029397649
+
+--------------
+Class 3 detect + classif
+--------------
+Accuracy 0.9980370616322588
+Precision 0.44910607866507746
+Recall 0.8882602545968883
+F1 0.5965801139962
+BCR 0.9432384916969123
+
+--------------
+Class 4 detect + classif
+--------------
+Accuracy 0.9995878445734924
+Precision 0.45622119815668205
+Recall 0.6213389121338913
+F1 0.5261293179805138
+BCR 0.8105330478719728
+
+--------------
+Class 5 detect + classif
+--------------
+Accuracy 0.9994838427368969
+Precision 0.6027397260273972
+Recall 0.7
+F1 0.647739221871714
+BCR 0.8498435059598789
+
+--------------
+Class 6 detect + classif
+--------------
+Accuracy 0.9998574789646656
+Precision 0.43103448275862066
+Recall 0.2958579881656805
+F1 0.3508771929824561
+BCR 0.6479035681013395
+
+--------------
+Class 7 detect + classif
+--------------
+Accuracy 0.9997149579293312
+Precision 0.5215889464594128
+Recall 0.7645569620253164
+F1 0.620123203285421
+BCR 0.8821717503538333
+
+--------------
+GLOBAL detect + classif
+--------------
+Average Accuracy 0.9990474202151837
+Average Precision 0.5907264129640334
+Average Recall 0.7635906455783463
+Average F1 0.6549921582701492
+Average BCR 0.8766598236833831
+KAPPA 0.6723113091332428 \\
+CEN 0.006851550197430151 \\
+--------------
+Confusion matrix detect
+--------------
+[[1288338    3821]
+ [    464    5431]]
+--------------
+Class 0 detect
+--------------
+Accuracy 0.9966989046680647
+Precision 0.9996399757293983
+Recall 0.9970429335708686
+F1 0.9983397656919264
+BCR 0.9591660808651629
+
+--------------
+Class 1 detect
+--------------
+Accuracy 0.9966989046680647
+Precision 0.5870082144401211
+Recall 0.9212892281594571
+F1 0.7171056974978544
+BCR 0.9591660808651629
+
+--------------
+GLOBAL detect
+--------------
+Average Accuracy 0.9966989046680647
+Average Precision 0.7933240950847598
+Average Recall 0.9591660808651629
+Average F1 0.8577227315948903
+Average BCR 0.9591660808651629
+KAPPA 0.715527467174212 \\
+CEN 0.019881677052664914 \\
+--------------
+Confusion matrix classif
+--------------
+[[ 106    0    1    0    0    0    0]
+ [  10 1515   41   26    5    2    3]
+ [   2   35 1884    9   33   11   18]
+ [  18   60   37  297   12    0   14]
+ [   1   37  115   20  616    4    2]
+ [   0   22   38    1   41   50    0]
+ [   0    9   30    0    4    0  302]]
+--------------
+Class 1 classif
+--------------
+Accuracy 0.9941078990977721
+Precision 0.7737226277372263
+Recall 0.9906542056074766
+F1 0.8688524590163934
+BCR 0.9924157579502447
+
+--------------
+Class 2 classif
+--------------
+Accuracy 0.9539679617013441
+Precision 0.9028605482717521
+Recall 0.9456928838951311
+F1 0.9237804878048782
+BCR 0.9515615111562362
+
+--------------
+Class 3 classif
+--------------
+Accuracy 0.9318725833179893
+Precision 0.8779123951537745
+Recall 0.9457831325301205
+F1 0.9105848235862735
+BCR 0.9347990975241471
+
+--------------
+Class 4 classif
+--------------
+Accuracy 0.9637267538206592
+Precision 0.8413597733711048
+Recall 0.678082191780822
+F1 0.7509481668773703
+BCR 0.833433244899023
+
+--------------
+Class 5 classif
+--------------
+Accuracy 0.9495488860246731
+Precision 0.8663853727144867
+Recall 0.7748427672955975
+F1 0.8180610889774236
+BCR 0.8771754820084545
+
+--------------
+Class 6 classif
+--------------
+Accuracy 0.9780887497698398
+Precision 0.746268656716418
+Recall 0.32894736842105265
+F1 0.4566210045662101
+BCR 0.6628635307723751
+
+--------------
+Class 7 classif
+--------------
+Accuracy 0.9852697477444301
+Precision 0.8908554572271387
+Recall 0.8753623188405797
+F1 0.8830409356725146
+BCR 0.9340437233211942
+
+--------------
+GLOBAL classif
+--------------
+Average Accuracy 0.965226083068101
+Average Precision 0.8427664044559859
+Average Recall 0.791337838338683
+Average F1 0.8016984237858662
+Average BCR 0.8837560496616679
+KAPPA 0.8343467406108664 \\
+CEN 0.1882103184911581 \\
+features computation time 745.795 (secs) = 12.43 min \\
+run time without features 1511.516 (secs) = 25.19 min \\
+total run time 2257.311 (secs) = 37.62 min \\
+2021-12-15 15:14:59.705553: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3800000000 Hz
+2021-12-15 15:14:59.706623: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5594739410a0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-12-15 15:14:59.706642: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-12-15 15:14:59.714750: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-12-15 15:15:00.369435: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5594739055e0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-12-15 15:15:00.369465: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce RTX 2080 SUPER, Compute Capability 7.5
+2021-12-15 15:15:00.369786: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:65:00.0 name: NVIDIA GeForce RTX 2080 SUPER computeCapability: 7.5
+coreClock: 1.845GHz coreCount: 48 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 462.00GiB/s
+2021-12-15 15:15:00.371155: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-15 15:15:00.375462: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-15 15:15:00.382975: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-12-15 15:15:00.401477: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-12-15 15:15:00.408973: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-12-15 15:15:00.416489: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-12-15 15:15:00.424497: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-15 15:15:00.424869: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-12-15 15:15:00.424907: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-15 15:15:00.425135: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-15 15:15:00.425144: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-12-15 15:15:00.425149: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-12-15 15:15:00.425462: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7472 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2080 SUPER, pci bus id: 0000:65:00.0, compute capability: 7.5)
+
+Model: hybrid_cnn_xgboost
+test set detect: uk
+test set classif: Natagora
+Generate training positions
+Train classifier
+Compute or load features
+^[[D    CNN params=  {'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 14, 'n_estimators': 500, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5}
+2021-12-15 15:26:13.976362: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:65:00.0 name: NVIDIA GeForce RTX 2080 SUPER computeCapability: 7.5
+coreClock: 1.845GHz coreCount: 48 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 462.00GiB/s
+2021-12-15 15:26:13.976429: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-15 15:26:13.976445: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-15 15:26:13.976453: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-12-15 15:26:13.976476: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-12-15 15:26:13.976484: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-12-15 15:26:13.976491: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-12-15 15:26:13.976499: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-15 15:26:13.976769: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-12-15 15:26:13.977437: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:65:00.0 name: NVIDIA GeForce RTX 2080 SUPER computeCapability: 7.5
+coreClock: 1.845GHz coreCount: 48 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 462.00GiB/s
+2021-12-15 15:26:13.977470: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-15 15:26:13.977479: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-15 15:26:13.977487: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-12-15 15:26:13.977494: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-12-15 15:26:13.977502: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-12-15 15:26:13.977508: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-12-15 15:26:13.977515: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-15 15:26:13.977764: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-12-15 15:26:13.977785: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-15 15:26:13.977790: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-12-15 15:26:13.977794: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-12-15 15:26:13.978072: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7472 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2080 SUPER, pci bus id: 0000:65:00.0, compute capability: 7.5)
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+quant_conv2d (QuantConv2D)   (None, 130, 20, 56)       504       
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 65, 10, 56)        0         
+_________________________________________________________________
+batch_normalization (BatchNo (None, 65, 10, 56)        224       
+_________________________________________________________________
+quant_conv2d_1 (QuantConv2D) (None, 65, 10, 56)        28224     
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 32, 5, 56)         0         
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 32, 5, 56)         224       
+_________________________________________________________________
+quant_conv2d_2 (QuantConv2D) (None, 32, 5, 56)         28224     
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 16, 2, 56)         0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 16, 2, 56)         224       
+_________________________________________________________________
+flatten (Flatten)            (None, 1792)              0         
+_________________________________________________________________
+quant_dense (QuantDense)     (None, 384)               688128    
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 384)               1536      
+_________________________________________________________________
+quant_dense_1 (QuantDense)   (None, 384)               147456    
+_________________________________________________________________
+batch_normalization_4 (Batch (None, 384)               1536      
+_________________________________________________________________
+quant_dense_2 (QuantDense)   (None, 8)                 3072      
+_________________________________________________________________
+batch_normalization_5 (Batch (None, 8)                 32        
+_________________________________________________________________
+activation (Activation)      (None, 8)                 0         
+=================================================================
+Total params: 899,384
+Trainable params: 897,496
+Non-trainable params: 1,888
+_________________________________________________________________
+/home/ndewinter/.local/lib/python3.6/site-packages/sklearn/utils/validation.py:72: FutureWarning: Pass classes=[0 1 2 3 4 5 6 7], y=[7 7 7 ... 3 3 3] as keyword args. From version 1.0 (renaming of 0.25) passing these as positional arguments will result in an error
+  "will result in an error", FutureWarning)
+Fit the CNN
+2021-12-15 15:26:15.104232: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2909088000 exceeds 10% of free system memory.
+2021-12-15 15:26:16.484725: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 323232000 exceeds 10% of free system memory.
+Train on 279720 samples, validate on 31080 samples
+Epoch 1/200
+2021-12-15 15:26:17.746196: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-15 15:26:18.060835: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+279720/279720 - 18s - loss: 0.9211 - accuracy: 0.7482 - sparse_categorical_accuracy: 0.7482 - val_loss: 0.7052 - val_accuracy: 0.8023 - val_sparse_categorical_accuracy: 0.8023
+Epoch 2/200
+279720/279720 - 14s - loss: 0.5367 - accuracy: 0.8291 - sparse_categorical_accuracy: 0.8291 - val_loss: 0.6472 - val_accuracy: 0.8005 - val_sparse_categorical_accuracy: 0.8005
+Epoch 3/200
+279720/279720 - 14s - loss: 0.4549 - accuracy: 0.8460 - sparse_categorical_accuracy: 0.8460 - val_loss: 0.5684 - val_accuracy: 0.8248 - val_sparse_categorical_accuracy: 0.8248
+Epoch 4/200
+279720/279720 - 14s - loss: 0.4128 - accuracy: 0.8560 - sparse_categorical_accuracy: 0.8560 - val_loss: 0.6507 - val_accuracy: 0.8131 - val_sparse_categorical_accuracy: 0.8131
+Epoch 5/200
+279720/279720 - 14s - loss: 0.3830 - accuracy: 0.8645 - sparse_categorical_accuracy: 0.8645 - val_loss: 0.5841 - val_accuracy: 0.8277 - val_sparse_categorical_accuracy: 0.8277
+Epoch 6/200
+279720/279720 - 14s - loss: 0.3622 - accuracy: 0.8701 - sparse_categorical_accuracy: 0.8701 - val_loss: 0.6212 - val_accuracy: 0.8155 - val_sparse_categorical_accuracy: 0.8155
+Epoch 7/200
+279720/279720 - 14s - loss: 0.3504 - accuracy: 0.8732 - sparse_categorical_accuracy: 0.8732 - val_loss: 0.5666 - val_accuracy: 0.8317 - val_sparse_categorical_accuracy: 0.8317
+Epoch 8/200
+279720/279720 - 14s - loss: 0.3383 - accuracy: 0.8780 - sparse_categorical_accuracy: 0.8780 - val_loss: 0.5802 - val_accuracy: 0.8220 - val_sparse_categorical_accuracy: 0.8220
+Epoch 9/200
+279720/279720 - 14s - loss: 0.3283 - accuracy: 0.8807 - sparse_categorical_accuracy: 0.8807 - val_loss: 0.6618 - val_accuracy: 0.8158 - val_sparse_categorical_accuracy: 0.8158
+Epoch 10/200
+279720/279720 - 14s - loss: 0.3199 - accuracy: 0.8835 - sparse_categorical_accuracy: 0.8835 - val_loss: 0.6293 - val_accuracy: 0.8226 - val_sparse_categorical_accuracy: 0.8226
+Epoch 11/200
+279720/279720 - 14s - loss: 0.3147 - accuracy: 0.8846 - sparse_categorical_accuracy: 0.8846 - val_loss: 0.6663 - val_accuracy: 0.8170 - val_sparse_categorical_accuracy: 0.8170
+Epoch 12/200
+279720/279720 - 14s - loss: 0.3095 - accuracy: 0.8866 - sparse_categorical_accuracy: 0.8866 - val_loss: 0.8708 - val_accuracy: 0.7824 - val_sparse_categorical_accuracy: 0.7824
+Epoch 13/200
+279720/279720 - 14s - loss: 0.3047 - accuracy: 0.8884 - sparse_categorical_accuracy: 0.8884 - val_loss: 0.6786 - val_accuracy: 0.8140 - val_sparse_categorical_accuracy: 0.8140
+Epoch 14/200
+279720/279720 - 14s - loss: 0.2975 - accuracy: 0.8906 - sparse_categorical_accuracy: 0.8906 - val_loss: 0.6386 - val_accuracy: 0.8251 - val_sparse_categorical_accuracy: 0.8251
+Epoch 15/200
+279720/279720 - 14s - loss: 0.2937 - accuracy: 0.8918 - sparse_categorical_accuracy: 0.8918 - val_loss: 0.7383 - val_accuracy: 0.8005 - val_sparse_categorical_accuracy: 0.8005
+Epoch 16/200
+279720/279720 - 14s - loss: 0.2899 - accuracy: 0.8932 - sparse_categorical_accuracy: 0.8932 - val_loss: 0.7162 - val_accuracy: 0.8056 - val_sparse_categorical_accuracy: 0.8056
+Epoch 17/200
+279720/279720 - 14s - loss: 0.2899 - accuracy: 0.8936 - sparse_categorical_accuracy: 0.8936 - val_loss: 0.6517 - val_accuracy: 0.8184 - val_sparse_categorical_accuracy: 0.8184
+Epoch 18/200
+279720/279720 - 14s - loss: 0.2849 - accuracy: 0.8947 - sparse_categorical_accuracy: 0.8947 - val_loss: 0.7370 - val_accuracy: 0.8089 - val_sparse_categorical_accuracy: 0.8089
+Epoch 19/200
+279720/279720 - 14s - loss: 0.2807 - accuracy: 0.8961 - sparse_categorical_accuracy: 0.8961 - val_loss: 0.6653 - val_accuracy: 0.8206 - val_sparse_categorical_accuracy: 0.8206
+Epoch 20/200
+279720/279720 - 14s - loss: 0.2793 - accuracy: 0.8969 - sparse_categorical_accuracy: 0.8969 - val_loss: 0.6702 - val_accuracy: 0.8235 - val_sparse_categorical_accuracy: 0.8235
+Epoch 21/200
+279720/279720 - 14s - loss: 0.2792 - accuracy: 0.8967 - sparse_categorical_accuracy: 0.8967 - val_loss: 0.6268 - val_accuracy: 0.8290 - val_sparse_categorical_accuracy: 0.8290
+Epoch 22/200
+279720/279720 - 14s - loss: 0.2730 - accuracy: 0.8995 - sparse_categorical_accuracy: 0.8995 - val_loss: 0.6962 - val_accuracy: 0.8240 - val_sparse_categorical_accuracy: 0.8240
+Epoch 23/200
+279720/279720 - 14s - loss: 0.2727 - accuracy: 0.8991 - sparse_categorical_accuracy: 0.8991 - val_loss: 0.6955 - val_accuracy: 0.8157 - val_sparse_categorical_accuracy: 0.8157
+Epoch 24/200
+279720/279720 - 14s - loss: 0.2717 - accuracy: 0.8998 - sparse_categorical_accuracy: 0.8998 - val_loss: 0.6753 - val_accuracy: 0.8223 - val_sparse_categorical_accuracy: 0.8223
+Epoch 25/200
+279720/279720 - 14s - loss: 0.2680 - accuracy: 0.9009 - sparse_categorical_accuracy: 0.9009 - val_loss: 0.7330 - val_accuracy: 0.8043 - val_sparse_categorical_accuracy: 0.8043
+Epoch 26/200
+279720/279720 - 14s - loss: 0.2688 - accuracy: 0.9005 - sparse_categorical_accuracy: 0.9005 - val_loss: 0.6725 - val_accuracy: 0.8185 - val_sparse_categorical_accuracy: 0.8185
+Epoch 27/200
+Restoring model weights from the end of the best epoch.
+279720/279720 - 14s - loss: 0.2657 - accuracy: 0.9013 - sparse_categorical_accuracy: 0.9013 - val_loss: 0.6652 - val_accuracy: 0.8211 - val_sparse_categorical_accuracy: 0.8211
+Epoch 00027: early stopping
+2021-12-15 15:32:49.513480: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 3232320000 exceeds 10% of free system memory.
+Fit xgboost
+/home/ndewinter/.local/lib/python3.6/site-packages/sklearn/utils/validation.py:72: FutureWarning: Pass classes=[0 1 2 3 4 5 6 7], y=[3 2 0 ... 2 0 0] as keyword args. From version 1.0 (renaming of 0.25) passing these as positional arguments will result in an error
+  "will result in an error", FutureWarning)
+/home/ndewinter/.local/lib/python3.6/site-packages/xgboost/sklearn.py:1224: UserWarning: The use of label encoder in XGBClassifier is deprecated and will be removed in a future release. To remove this warning, do the following: 1) Pass option use_label_encoder=False when constructing XGBClassifier object; and 2) Encode your labels (y) as integers starting with 0, i.e. 0, 1, 2, ..., [num_class - 1].
+  warnings.warn(label_encoder_deprecation_msg, UserWarning)
+[15:33:03] WARNING: ../src/learner.cc:576: 
+Parameters: { "scale_pos_weight" } might not be used.
+
+  This could be a false alarm, with some parameters getting used by language bindings but
+  then being mistakenly passed down to XGBoost core, or some parameter actually being used
+  but getting flagged wrongly here. Please open an issue if you find any such cases.
+
+
+total xgboost run time 229.893 (secs) = 3.83 min \\
+XGBoost params=  {'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 14, 'n_estimators': 272, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5}
+15\_12\_21\_15\_15\_00\_classif\_hybrid\_cnn\_xgboost
+2021-12-15 15:39:20.021076: W tensorflow/python/util/util.cc:319] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+WARNING:tensorflow:From /usr/local/lib64/python3.6/site-packages/tensorflow/python/ops/resource_variable_ops.py:1809: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+mod_params= {'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 14, 'n_estimators': 272, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5, 'win_size': 0.23, 'chunk_size': 0, 'max_freq': 270, 'min_freq': 10, 'mean_log_mag': 0.5, 'slice_scale': 0.02322, 'overlap': 0.75, 'crop_spec': True, 'denoise': True, 'smooth_spec': True, 'nms_win_size': 21, 'smooth_op_prediction_sigma': 1.0335917312661498, 'num_hnm': 0}
+--------------
+Confusion matrix detect + classif
+--------------
+[[1288453      25     834    1895     293     339      36     271]
+ [      2     102       1       3       0       0       0       0]
+ [    138      18    1487      54      29      10       3       8]
+ [    147       3      28    1862       9      35      11      29]
+ [     34      19      58      40     304      15       0       9]
+ [     83       1      26     115      22     629       3       3]
+ [     16       2      23      44       5      36      46       0]
+ [     47       0       4      37       0       2       0     306]]
+--------------
+Class 0 detect + classif
+--------------
+Accuracy 0.9967952026649123
+Precision 0.9996376811594203
+Recall 0.9971419638338083
+F1 0.9983882628340383
+BCR 0.9590483008065454
+
+--------------
+Class 1 detect + classif
+--------------
+Accuracy 0.9999429915858662
+Precision 0.6
+Recall 0.9444444444444444
+F1 0.7338129496402879
+BCR 0.9721960269875977
+
+--------------
+Class 2 detect + classif
+--------------
+Accuracy 0.9990493461751206
+Precision 0.6042259244209671
+Recall 0.8511734401831712
+F1 0.7067490494296579
+BCR 0.925211037479365
+
+--------------
+Class 3 detect + classif
+--------------
+Accuracy 0.9981125592617872
+Precision 0.4597530864197531
+Recall 0.876647834274953
+F1 0.6031746031746031
+BCR 0.9374797357387898
+
+--------------
+Class 4 detect + classif
+--------------
+Accuracy 0.9995893853414419
+Precision 0.459214501510574
+Recall 0.6346555323590815
+F1 0.532865907099036
+BCR 0.8171898165427183
+
+--------------
+Class 5 detect + classif
+--------------
+Accuracy 0.9994684350574013
+Precision 0.5900562851782364
+Recall 0.7131519274376418
+F1 0.6457905544147844
+BCR 0.8564075203666671
+
+--------------
+Class 6 detect + classif
+--------------
+Accuracy 0.9998621012685143
+Precision 0.46464646464646464
+Recall 0.26744186046511625
+F1 0.33948339483394835
+BCR 0.6337005123517339
+
+--------------
+Class 7 detect + classif
+--------------
+Accuracy 0.9996841425703399
+Precision 0.48881789137380194
+Recall 0.7727272727272727
+F1 0.598825831702544
+BCR 0.8862403373125767
+
+--------------
+GLOBAL detect + classif
+--------------
+Average Accuracy 0.999063020490673
+Average Precision 0.5832939793386522
+Average Recall 0.7571730344656862
+Average F1 0.6448863191411125
+Average BCR 0.8734341609482492
+KAPPA 0.6754351706393108 \\
+CEN 0.006791548763162912 \\
+--------------
+Confusion matrix detect
+--------------
+[[1288453    3693]
+ [    467    5441]]
+--------------
+Class 0 detect
+--------------
+Accuracy 0.9967952026649123
+Precision 0.9996376811594203
+Recall 0.9971419638338083
+F1 0.9983882628340383
+BCR 0.9590483008065454
+
+--------------
+Class 1 detect
+--------------
+Accuracy 0.9967952026649123
+Precision 0.5956864462447996
+Recall 0.9209546377792823
+F1 0.7234410317776891
+BCR 0.9590483008065454
+
+--------------
+GLOBAL detect
+--------------
+Average Accuracy 0.9967952026649123
+Average Precision 0.7976620637021099
+Average Recall 0.9590483008065454
+Average F1 0.8609146473058638
+Average BCR 0.9590483008065454
+KAPPA 0.7219038396984627 \\
+CEN 0.01946096715915184 \\
+--------------
+Confusion matrix classif
+--------------
+[[ 102    1    3    0    0    0    0]
+ [  18 1487   54   29   10    3    8]
+ [   3   28 1862    9   35   11   29]
+ [  19   58   40  304   15    0    9]
+ [   1   26  115   22  629    3    3]
+ [   2   23   44    5   36   46    0]
+ [   0    4   37    0    2    0  306]]
+--------------
+Class 1 classif
+--------------
+Accuracy 0.991361882006984
+Precision 0.7034482758620689
+Recall 0.9622641509433962
+F1 0.8127490039840637
+BCR 0.9771020848437694
+
+--------------
+Class 2 classif
+--------------
+Accuracy 0.9518470869325492
+Precision 0.9139520590043024
+Recall 0.9241765071472965
+F1 0.919035846724351
+BCR 0.9438210301916024
+
+--------------
+Class 3 classif
+--------------
+Accuracy 0.9250137842308399
+Precision 0.8640371229698376
+Recall 0.9418310571573091
+F1 0.9012584704743465
+BCR 0.9286233807726499
+
+--------------
+Class 4 classif
+--------------
+Accuracy 0.9621393126263554
+Precision 0.8238482384823849
+Recall 0.6831460674157304
+F1 0.746928746928747
+BCR 0.8350678295445345
+
+--------------
+Class 5 classif
+--------------
+Accuracy 0.9507443484653556
+Precision 0.8651994497936726
+Recall 0.7872340425531915
+F1 0.8243774574049804
+BCR 0.8830612263606112
+
+--------------
+Class 6 classif
+--------------
+Accuracy 0.9766587024444036
+Precision 0.7301587301587301
+Recall 0.2948717948717949
+F1 0.4200913242009133
+BCR 0.6458275719865124
+
+--------------
+Class 7 classif
+--------------
+Accuracy 0.9830913435030325
+Precision 0.8619718309859155
+Recall 0.8767908309455588
+F1 0.8693181818181818
+BCR 0.9335839465018445
+
+--------------
+GLOBAL classif
+--------------
+Average Accuracy 0.9629794943156458
+Average Precision 0.823230815322416
+Average Recall 0.7814734930048967
+Average F1 0.7848227187907977
+Average BCR 0.8781552957430748
+KAPPA 0.8242992223536498 \\
+CEN 0.20010252561034597 \\
+features computation time 737.986 (secs) = 12.3 min \\
+run time without features 726.134 (secs) = 12.1 min \\
+total run time 1464.12 (secs) = 24.4 min \\
+2021-12-15 16:27:20.515543: I tensorflow/core/platform/profile_utils/cpu_utils.cc:102] CPU Frequency: 3800000000 Hz
+2021-12-15 16:27:20.516596: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56203081a0a0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-12-15 16:27:20.516614: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-12-15 16:27:20.524316: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-12-15 16:27:21.176530: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5620307de5e0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-12-15 16:27:21.176558: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce RTX 2080 SUPER, Compute Capability 7.5
+2021-12-15 16:27:21.176891: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:65:00.0 name: NVIDIA GeForce RTX 2080 SUPER computeCapability: 7.5
+coreClock: 1.845GHz coreCount: 48 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 462.00GiB/s
+2021-12-15 16:27:21.179656: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-15 16:27:21.181238: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-15 16:27:21.188876: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-12-15 16:27:21.207742: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-12-15 16:27:21.220992: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-12-15 16:27:21.228701: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-12-15 16:27:21.236593: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-15 16:27:21.236962: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-12-15 16:27:21.236996: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-15 16:27:21.237221: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-15 16:27:21.237230: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-12-15 16:27:21.237236: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-12-15 16:27:21.237541: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7472 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2080 SUPER, pci bus id: 0000:65:00.0, compute capability: 7.5)
+
+Model: hybrid_cnn_xgboost
+test set detect: uk
+test set classif: Natagora
+Generate training positions
+Train classifier
+Compute or load features
+CNN params=  {'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 14, 'n_estimators': 500, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5}
+2021-12-15 16:38:33.746814: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:65:00.0 name: NVIDIA GeForce RTX 2080 SUPER computeCapability: 7.5
+coreClock: 1.845GHz coreCount: 48 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 462.00GiB/s
+2021-12-15 16:38:33.746879: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-15 16:38:33.746888: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-15 16:38:33.746895: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-12-15 16:38:33.746903: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-12-15 16:38:33.746926: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-12-15 16:38:33.746934: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-12-15 16:38:33.746941: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-15 16:38:33.747241: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-12-15 16:38:33.747903: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:65:00.0 name: NVIDIA GeForce RTX 2080 SUPER computeCapability: 7.5
+coreClock: 1.845GHz coreCount: 48 deviceMemorySize: 7.79GiB deviceMemoryBandwidth: 462.00GiB/s
+2021-12-15 16:38:33.747937: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-12-15 16:38:33.747946: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-15 16:38:33.747959: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-12-15 16:38:33.747966: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-12-15 16:38:33.747974: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-12-15 16:38:33.747982: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-12-15 16:38:33.747989: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-12-15 16:38:33.748242: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-12-15 16:38:33.748264: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-12-15 16:38:33.748269: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-12-15 16:38:33.748274: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-12-15 16:38:33.748548: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7472 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2080 SUPER, pci bus id: 0000:65:00.0, compute capability: 7.5)
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+quant_conv2d (QuantConv2D)   (None, 130, 20, 56)       504       
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 65, 10, 56)        0         
+_________________________________________________________________
+batch_normalization (BatchNo (None, 65, 10, 56)        224       
+_________________________________________________________________
+quant_conv2d_1 (QuantConv2D) (None, 65, 10, 56)        28224     
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 32, 5, 56)         0         
+_________________________________________________________________
+batch_normalization_1 (Batch (None, 32, 5, 56)         224       
+_________________________________________________________________
+quant_conv2d_2 (QuantConv2D) (None, 32, 5, 56)         28224     
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 16, 2, 56)         0         
+_________________________________________________________________
+batch_normalization_2 (Batch (None, 16, 2, 56)         224       
+_________________________________________________________________
+flatten (Flatten)            (None, 1792)              0         
+_________________________________________________________________
+quant_dense (QuantDense)     (None, 384)               688128    
+_________________________________________________________________
+batch_normalization_3 (Batch (None, 384)               1536      
+_________________________________________________________________
+quant_dense_1 (QuantDense)   (None, 384)               147456    
+_________________________________________________________________
+batch_normalization_4 (Batch (None, 384)               1536      
+_________________________________________________________________
+quant_dense_2 (QuantDense)   (None, 8)                 3072      
+_________________________________________________________________
+batch_normalization_5 (Batch (None, 8)                 32        
+_________________________________________________________________
+activation (Activation)      (None, 8)                 0         
+=================================================================
+Total params: 899,384
+Trainable params: 897,496
+Non-trainable params: 1,888
+_________________________________________________________________
+/home/ndewinter/.local/lib/python3.6/site-packages/sklearn/utils/validation.py:72: FutureWarning: Pass classes=[0 1 2 3 4 5 6 7], y=[7 7 7 ... 3 3 3] as keyword args. From version 1.0 (renaming of 0.25) passing these as positional arguments will result in an error
+  "will result in an error", FutureWarning)
+Fit the CNN
+2021-12-15 16:38:34.906797: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 2909088000 exceeds 10% of free system memory.
+2021-12-15 16:38:36.290581: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 323232000 exceeds 10% of free system memory.
+Train on 279720 samples, validate on 31080 samples
+Epoch 1/200
+2021-12-15 16:38:37.579542: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-12-15 16:38:37.891568: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+279720/279720 - 18s - loss: 0.9244 - accuracy: 0.7461 - sparse_categorical_accuracy: 0.7461 - val_loss: 0.7719 - val_accuracy: 0.7792 - val_sparse_categorical_accuracy: 0.7792
+Epoch 2/200
+279720/279720 - 14s - loss: 0.5456 - accuracy: 0.8252 - sparse_categorical_accuracy: 0.8252 - val_loss: 0.5842 - val_accuracy: 0.8217 - val_sparse_categorical_accuracy: 0.8217
+Epoch 3/200
+279720/279720 - 14s - loss: 0.4612 - accuracy: 0.8434 - sparse_categorical_accuracy: 0.8434 - val_loss: 0.5850 - val_accuracy: 0.8200 - val_sparse_categorical_accuracy: 0.8200
+Epoch 4/200
+279720/279720 - 14s - loss: 0.4194 - accuracy: 0.8546 - sparse_categorical_accuracy: 0.8546 - val_loss: 0.6126 - val_accuracy: 0.8133 - val_sparse_categorical_accuracy: 0.8133
+Epoch 5/200
+279720/279720 - 14s - loss: 0.3946 - accuracy: 0.8606 - sparse_categorical_accuracy: 0.8606 - val_loss: 0.6300 - val_accuracy: 0.8198 - val_sparse_categorical_accuracy: 0.8198
+Epoch 6/200
+279720/279720 - 14s - loss: 0.3736 - accuracy: 0.8670 - sparse_categorical_accuracy: 0.8670 - val_loss: 0.5399 - val_accuracy: 0.8355 - val_sparse_categorical_accuracy: 0.8355
+Epoch 7/200
+279720/279720 - 14s - loss: 0.3588 - accuracy: 0.8714 - sparse_categorical_accuracy: 0.8714 - val_loss: 0.5991 - val_accuracy: 0.8189 - val_sparse_categorical_accuracy: 0.8189
+Epoch 8/200
+279720/279720 - 14s - loss: 0.3457 - accuracy: 0.8754 - sparse_categorical_accuracy: 0.8754 - val_loss: 0.6068 - val_accuracy: 0.8255 - val_sparse_categorical_accuracy: 0.8255
+Epoch 9/200
+279720/279720 - 14s - loss: 0.3353 - accuracy: 0.8784 - sparse_categorical_accuracy: 0.8784 - val_loss: 0.6560 - val_accuracy: 0.8164 - val_sparse_categorical_accuracy: 0.8164
+Epoch 10/200
+279720/279720 - 14s - loss: 0.3274 - accuracy: 0.8815 - sparse_categorical_accuracy: 0.8815 - val_loss: 0.6961 - val_accuracy: 0.8022 - val_sparse_categorical_accuracy: 0.8022
+Epoch 11/200
+279720/279720 - 14s - loss: 0.3164 - accuracy: 0.8853 - sparse_categorical_accuracy: 0.8853 - val_loss: 0.6588 - val_accuracy: 0.8138 - val_sparse_categorical_accuracy: 0.8138
+Epoch 12/200
+279720/279720 - 14s - loss: 0.3107 - accuracy: 0.8866 - sparse_categorical_accuracy: 0.8866 - val_loss: 0.7966 - val_accuracy: 0.7932 - val_sparse_categorical_accuracy: 0.7932
+Epoch 13/200
+279720/279720 - 14s - loss: 0.3038 - accuracy: 0.8890 - sparse_categorical_accuracy: 0.8890 - val_loss: 0.6071 - val_accuracy: 0.8232 - val_sparse_categorical_accuracy: 0.8232
+Epoch 14/200
+279720/279720 - 14s - loss: 0.2994 - accuracy: 0.8899 - sparse_categorical_accuracy: 0.8899 - val_loss: 0.6455 - val_accuracy: 0.8182 - val_sparse_categorical_accuracy: 0.8182
+Epoch 15/200
+279720/279720 - 14s - loss: 0.2947 - accuracy: 0.8922 - sparse_categorical_accuracy: 0.8922 - val_loss: 0.6672 - val_accuracy: 0.8189 - val_sparse_categorical_accuracy: 0.8189
+Epoch 16/200
+279720/279720 - 14s - loss: 0.2903 - accuracy: 0.8932 - sparse_categorical_accuracy: 0.8932 - val_loss: 0.6447 - val_accuracy: 0.8233 - val_sparse_categorical_accuracy: 0.8233
+Epoch 17/200
+279720/279720 - 14s - loss: 0.2868 - accuracy: 0.8947 - sparse_categorical_accuracy: 0.8947 - val_loss: 0.7724 - val_accuracy: 0.8032 - val_sparse_categorical_accuracy: 0.8032
+Epoch 18/200
+279720/279720 - 14s - loss: 0.2843 - accuracy: 0.8955 - sparse_categorical_accuracy: 0.8955 - val_loss: 0.6419 - val_accuracy: 0.8210 - val_sparse_categorical_accuracy: 0.8210
+Epoch 19/200
+279720/279720 - 14s - loss: 0.2783 - accuracy: 0.8975 - sparse_categorical_accuracy: 0.8975 - val_loss: 0.6642 - val_accuracy: 0.8248 - val_sparse_categorical_accuracy: 0.8248
+Epoch 20/200
+279720/279720 - 14s - loss: 0.2766 - accuracy: 0.8982 - sparse_categorical_accuracy: 0.8982 - val_loss: 0.6987 - val_accuracy: 0.8162 - val_sparse_categorical_accuracy: 0.8162
+Epoch 21/200
+279720/279720 - 14s - loss: 0.2736 - accuracy: 0.8989 - sparse_categorical_accuracy: 0.8989 - val_loss: 0.6488 - val_accuracy: 0.8225 - val_sparse_categorical_accuracy: 0.8225
+Epoch 22/200
+279720/279720 - 14s - loss: 0.2715 - accuracy: 0.9000 - sparse_categorical_accuracy: 0.9000 - val_loss: 0.7340 - val_accuracy: 0.8071 - val_sparse_categorical_accuracy: 0.8071
+Epoch 23/200
+279720/279720 - 14s - loss: 0.2680 - accuracy: 0.9014 - sparse_categorical_accuracy: 0.9014 - val_loss: 0.6686 - val_accuracy: 0.8182 - val_sparse_categorical_accuracy: 0.8182
+Epoch 24/200
+279720/279720 - 14s - loss: 0.2656 - accuracy: 0.9021 - sparse_categorical_accuracy: 0.9021 - val_loss: 0.7197 - val_accuracy: 0.8140 - val_sparse_categorical_accuracy: 0.8140
+Epoch 25/200
+279720/279720 - 14s - loss: 0.2640 - accuracy: 0.9032 - sparse_categorical_accuracy: 0.9032 - val_loss: 0.7243 - val_accuracy: 0.8158 - val_sparse_categorical_accuracy: 0.8158
+Epoch 26/200
+Restoring model weights from the end of the best epoch.
+279720/279720 - 14s - loss: 0.2623 - accuracy: 0.9034 - sparse_categorical_accuracy: 0.9034 - val_loss: 0.6734 - val_accuracy: 0.8256 - val_sparse_categorical_accuracy: 0.8256
+Epoch 00026: early stopping
+2021-12-15 16:44:54.792776: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 3232320000 exceeds 10% of free system memory.
+Fit xgboost
+/home/ndewinter/.local/lib/python3.6/site-packages/sklearn/utils/validation.py:72: FutureWarning: Pass classes=[0 1 2 3 4 5 6 7], y=[3 2 0 ... 2 0 0] as keyword args. From version 1.0 (renaming of 0.25) passing these as positional arguments will result in an error
+  "will result in an error", FutureWarning)
+/home/ndewinter/.local/lib/python3.6/site-packages/xgboost/sklearn.py:1224: UserWarning: The use of label encoder in XGBClassifier is deprecated and will be removed in a future release. To remove this warning, do the following: 1) Pass option use_label_encoder=False when constructing XGBClassifier object; and 2) Encode your labels (y) as integers starting with 0, i.e. 0, 1, 2, ..., [num_class - 1].
+  warnings.warn(label_encoder_deprecation_msg, UserWarning)
+[16:45:09] WARNING: ../src/learner.cc:576: 
+Parameters: { "scale_pos_weight" } might not be used.
+
+  This could be a false alarm, with some parameters getting used by language bindings but
+  then being mistakenly passed down to XGBoost core, or some parameter actually being used
+  but getting flagged wrongly here. Please open an issue if you find any such cases.
+
+
+total xgboost run time 233.653 (secs) = 3.89 min \\
+XGBoost params=  {'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 14, 'n_estimators': 263, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5}
+15\_12\_21\_16\_27\_21\_classif\_hybrid\_cnn\_xgboost
+2021-12-15 16:51:28.803158: W tensorflow/python/util/util.cc:319] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+WARNING:tensorflow:From /usr/local/lib64/python3.6/site-packages/tensorflow/python/ops/resource_variable_ops.py:1809: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+mod_params= {'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 14, 'n_estimators': 263, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5, 'win_size': 0.23, 'chunk_size': 0, 'max_freq': 270, 'min_freq': 10, 'mean_log_mag': 0.5, 'slice_scale': 0.02322, 'overlap': 0.75, 'crop_spec': True, 'denoise': True, 'smooth_spec': True, 'nms_win_size': 21, 'smooth_op_prediction_sigma': 1.0335917312661498, 'num_hnm': 0}
+--------------
+Confusion matrix detect + classif
+--------------
+[[1288533      17     827    1930     201     353      34     259]
+ [      1     104       0       3       0       0       0       0]
+ [    140      17    1490      55      29       9       3       2]
+ [    157       3      37    1848       9      34      10      22]
+ [     52      17      55      40     282      11       1      20]
+ [     87       0      28     113      19     623       8       4]
+ [     17       1      27      33       6      35      52       0]
+ [     43       0       3      30       0       3       0     317]]
+--------------
+Class 0 detect + classif
+--------------
+Accuracy 0.996827558791853
+Precision 0.9996144387640319
+Recall 0.9971977024410403
+F1 0.9984046081178249
+BCR 0.9564802071527236
+
+--------------
+Class 1 detect + classif
+--------------
+Accuracy 0.9999545473454879
+Precision 0.6540880503144654
+Recall 0.9629629629629629
+F1 0.7790262172284644
+BCR 0.9814602941593586
+
+--------------
+Class 2 detect + classif
+--------------
+Accuracy 0.9990508869430702
+Precision 0.603972436157276
+Recall 0.8538681948424068
+F1 0.7075023741690409
+BCR 0.9265572582570843
+
+--------------
+Class 3 detect + classif
+--------------
+Accuracy 0.9980925292784429
+Precision 0.456071076011846
+Recall 0.8716981132075472
+F1 0.5988334413480233
+BCR 0.934998704656838
+
+--------------
+Class 4 detect + classif
+--------------
+Accuracy 0.9996456233716009
+Precision 0.5164835164835165
+Recall 0.5899581589958159
+F1 0.55078125
+BCR 0.7948773513525045
+
+--------------
+Class 5 detect + classif
+--------------
+Accuracy 0.9994576496817544
+Precision 0.5833333333333334
+Recall 0.7063492063492064
+F1 0.6389743589743591
+BCR 0.8530030761912888
+
+--------------
+Class 6 detect + classif
+--------------
+Accuracy 0.9998651828044134
+Precision 0.48148148148148145
+Recall 0.30409356725146197
+F1 0.37275985663082434
+BCR 0.6520252100324255
+
+--------------
+Class 7 detect + classif
+--------------
+Accuracy 0.9997026317857346
+Precision 0.5080128205128205
+Recall 0.8005050505050505
+F1 0.6215686274509804
+BCR 0.9001342352254149
+
+--------------
+GLOBAL detect + classif
+--------------
+Average Accuracy 0.9990745762502946
+Average Precision 0.6003821441323464
+Average Recall 0.7608291195694366
+Average F1 0.6584813417399398
+Average BCR 0.8749420421284548
+KAPPA 0.6769075592807045 \\
+CEN 0.006711702412636766 \\
+--------------
+Confusion matrix detect
+--------------
+[[1288533    3621]
+ [    497    5403]]
+--------------
+Class 0 detect
+--------------
+Accuracy 0.996827558791853
+Precision 0.9996144387640319
+Recall 0.9971977024410403
+F1 0.9984046081178249
+BCR 0.9564802071527236
+
+--------------
+Class 1 detect
+--------------
+Accuracy 0.996827558791853
+Precision 0.5987367021276596
+Recall 0.9157627118644068
+F1 0.7240686143125168
+BCR 0.9564802071527236
+
+--------------
+GLOBAL detect
+--------------
+Average Accuracy 0.996827558791853
+Average Precision 0.7991755704458458
+Average Recall 0.9564802071527236
+Average F1 0.8612366112151708
+Average BCR 0.9564802071527236
+KAPPA 0.7225435155349168 \\
+CEN 0.01937119884850289 \\
+--------------
+Confusion matrix classif
+--------------
+[[ 104    0    3    0    0    0    0]
+ [  17 1490   55   29    9    3    2]
+ [   3   37 1848    9   34   10   22]
+ [  17   55   40  282   11    1   20]
+ [   0   28  113   19  623    8    4]
+ [   1   27   33    6   35   52    0]
+ [   0    3   30    0    3    0  317]]
+--------------
+Class 1 classif
+--------------
+Accuracy 0.9924116231723117
+Precision 0.7323943661971831
+Recall 0.9719626168224299
+F1 0.8353413654618475
+BCR 0.9823936951181635
+
+--------------
+Class 2 classif
+--------------
+Accuracy 0.9509531741625024
+Precision 0.9085365853658537
+Recall 0.9283489096573209
+F1 0.9183359013867488
+BCR 0.9444272194416146
+
+--------------
+Class 3 classif
+--------------
+Accuracy 0.9280029613177864
+Precision 0.8708765315739868
+Recall 0.9414161996943454
+F1 0.9047735618115055
+BCR 0.9308825184518239
+
+--------------
+Class 4 classif
+--------------
+Accuracy 0.9616879511382566
+Precision 0.8173913043478261
+Recall 0.6619718309859155
+F1 0.7315175097276264
+BCR 0.8246568015689071
+
+--------------
+Class 5 classif
+--------------
+Accuracy 0.9511382565241533
+Precision 0.8713286713286713
+Recall 0.7836477987421384
+F1 0.8251655629139072
+BCR 0.8818412604821804
+
+--------------
+Class 6 classif
+--------------
+Accuracy 0.9770497871552841
+Precision 0.7027027027027027
+Recall 0.33766233766233766
+F1 0.45614035087719296
+BCR 0.666735531566928
+
+--------------
+Class 7 classif
+--------------
+Accuracy 0.9844530816213215
+Precision 0.8684931506849315
+Recall 0.8980169971671388
+F1 0.883008356545961
+BCR 0.9442560233360446
+
+--------------
+GLOBAL classif
+--------------
+Average Accuracy 0.9636709764416594
+Average Precision 0.8245319017430222
+Average Recall 0.7890038129616609
+Average F1 0.7934689441035413
+Average BCR 0.8821704357093803
+KAPPA 0.8275469498013208 \\
+CEN 0.19744809699975774 \\
+features computation time 736.839 (secs) = 12.28 min \\
+run time without features 715.287 (secs) = 11.92 min \\
+total run time 1452.126 (secs) = 24.2 min \\
