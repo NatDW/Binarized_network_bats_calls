@@ -1,5 +1,6 @@
 import numpy as np
 import tensorflow as tf
+from larq_zoo.literature import BinaryResNetE18
 from larq.layers import QuantConv2D, QuantDense
 from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout, BatchNormalization, Activation
 from sklearn.utils import class_weight
@@ -60,6 +61,7 @@ def build_cnn(params, ip_size, nb_output, nb_cnn):
     net.add(QuantDense(nb_output, activation='linear', **kwargs))
     net.add(BatchNormalization(momentum=0.9))
     net.add(Activation('softmax'))
+    net = BinaryResNetE18(input_shape=(ip_size[0], ip_size[1], 1), weights=None, num_classes=nb_output)
     net.summary()
     return net
 
@@ -107,7 +109,7 @@ def network_fit(params, features, labels, nb_output, nb_cnn=''):
                                     epsilon=epsilon, name="Adam")
     network.compile(optimizer=opti, loss=loss_fn, metrics=['accuracy', 'sparse_categorical_accuracy'])
     class_w = class_weight.compute_class_weight('balanced', np.unique(labels), labels)
-    callback = tf.keras.callbacks.EarlyStopping(monitor="val_accuracy", min_delta=min_delta, patience=patience,
+    callback = tf.keras.callbacks.EarlyStopping(monitor="val_loss", min_delta=min_delta, patience=patience,
                                                 verbose=1, restore_best_weights=params.restore_best_weights)
     features = features.reshape(features.shape[0], features.shape[2], features.shape[3], 1)
     
@@ -115,7 +117,7 @@ def network_fit(params, features, labels, nb_output, nb_cnn=''):
     print("Fit the CNN")
     history = network.fit( features, labels, epochs=params.num_epochs, batch_size=batchsize,
                                 shuffle=True, verbose=2, class_weight=class_w,
-                                validation_split=params.validation_split, callbacks=[callback])
+                                validation_split=params.validation_split) #, callbacks=[callback])
     return network, history
 
 def obj_func_cnn(args):
