@@ -37,7 +37,6 @@ class NeuralNet:
         self.network_features = None
         self.model_feat = None
         self.network_classif = None
-        self.scaler = None
 
     def train(self, positions, class_labels, files, durations):
         """
@@ -105,8 +104,6 @@ class NeuralNet:
 
         # train and tune the svm classification model
         if self.params.classification_model == "hybrid_cnn_svm":
-            self.scaler = MinMaxScaler()
-            feat_train = self.scaler.fit_transform(feat_train)
             if self.params.tune_svm_spectrogram:
                 print("Tune SVM")
                 tic_svm = time.time()
@@ -145,7 +142,7 @@ class NeuralNet:
                                                     max_depth=self.params.max_depth, n_estimators=self.params.n_estimators,
                                                     gamma=self.params.gamma_xgb, subsample=self.params.subsample,
                                                     scale_pos_weight=self.params.scale_pos_weight, objective="multi:softprob",
-                                                    tree_method='gpu_hist')
+                                                    tree_method='approx')
             train_feat, val_feat, train_labels, val_labels = train_test_split(feat_train, labels,
                                                         test_size=0.1, random_state=1, stratify=labels)
             class_weights = list(class_weight.compute_class_weight('balanced', np.unique(train_labels),train_labels))
