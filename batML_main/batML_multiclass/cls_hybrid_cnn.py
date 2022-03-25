@@ -1,7 +1,8 @@
 import numpy as np
+from multiprocessing import Process, Queue
 from scipy.io import wavfile
 import pyximport; pyximport.install()
-from os import path
+from os import path, remove
 import time
 from scipy.ndimage.filters import gaussian_filter1d
 from sklearn.utils import class_weight
@@ -61,7 +62,6 @@ class NeuralNet:
             self.network_features = None
             self.model_feat = None
             self.network_classif = None
-            self.scaler = None
             gc.collect()
 
         # compute or load the features of the training files and the associated class label.
@@ -93,12 +93,12 @@ class NeuralNet:
                 tune_network(self.params, features, labels, self.params.trials_filename_1)
                 toc_cnn_8 = time.time()
             print('total tuning time', round(toc_cnn_8-tic_cnn_8, 3), '(secs) =', round((toc_cnn_8-tic_cnn_8)/60,2), r"min \\")
-        
+
         self.network_features, _ = network_fit(self.params, features, labels, 8)
 
         # extracting features from last layer of the features CNN
         self.model_feat = Model(inputs=self.network_features.input,
-                                outputs=self.network_features.layers[len(self.network_features.layers)-8].output)
+                            outputs=self.network_features.layers[len(self.network_features.layers)-8].output)
         features = features.reshape(features.shape[0], features.shape[2], features.shape[3], 1)
         feat_train = self.model_feat.predict(features)
 
@@ -142,13 +142,14 @@ class NeuralNet:
                                                     max_depth=self.params.max_depth, n_estimators=self.params.n_estimators,
                                                     gamma=self.params.gamma_xgb, subsample=self.params.subsample,
                                                     scale_pos_weight=self.params.scale_pos_weight, objective="multi:softprob",
-                                                    tree_method='approx')
+                                                    tree_method='gpu_hist')
             train_feat, val_feat, train_labels, val_labels = train_test_split(feat_train, labels,
                                                         test_size=0.1, random_state=1, stratify=labels)
             class_weights = list(class_weight.compute_class_weight('balanced', np.unique(train_labels),train_labels))
             class_w = np.ones(train_labels.shape[0], dtype = 'float')
             for i, val in enumerate(train_labels):
                 class_w[i] = class_weights[val]
+
             self.network_classif.fit(train_feat, train_labels, eval_metric=['mlogloss'], sample_weight=class_w,
                         early_stopping_rounds=self.params.n_estimators//10, eval_set=[(val_feat,val_labels)],
                         verbose=False)
@@ -189,7 +190,7 @@ class NeuralNet:
         nb_windows : ndarray
             Number of windows for every test file.
         """
-
+        
         # compute features
         tic = time.time()
         features = self.create_or_load_features(goal, file_name, audio_samples, sampling_rate)
@@ -206,7 +207,6 @@ class NeuralNet:
         if self.params.classification_model == "hybrid_cnn_xgboost":
             y_predictions = self.network_classif.predict_proba(feat_test)
         elif self.params.classification_model == "hybrid_cnn_svm":
-            feat_test = self.scaler.transform(feat_test)
             y_predictions = self.network_classif.predict_proba(feat_test)
         toc=time.time()
         self.params.classif_time += toc - tic

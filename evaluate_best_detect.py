@@ -78,7 +78,7 @@ if __name__ == "__main__":
     load_features_from_file = False
     model_name = "hybrid_cnn_xgboost"  # can be one of: 'batmen', 'cnn2',  'hybrid_cnn_svm', 'hybrid_cnn_xgboost', 'hybrid_call_svm', 'hybrid_call_xgboost'
     result_dir = 'results/'  # where we will store the outputs
-    model_dir = '/home/ndewinter/code/batML_main/batML_multiclass/data/models/'
+    model_dir = '/home/ndewinter/batML_main/batML_multiclass/models/'
 
     test_set = 'Natagora'
     data_set_test = '/home/ndewinter/data/train_test_split/test_set_' + test_set + '.npz'

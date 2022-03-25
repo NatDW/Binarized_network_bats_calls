@@ -39,19 +39,22 @@ def build_cnn(params, ip_size, nb_output, nb_cnn):
     pool_size = getattr(params, "pool_size"+nb_cnn)
     nb_dense_nodes = getattr(params, "nb_dense_nodes"+nb_cnn)
     dropout_proba = getattr(params, "dropout_proba"+nb_cnn)
-    kwargs = dict(use_bias=False, input_quantizer='ste_sign', kernel_quantizer='ste_sign',
-                                    kernel_constraint='weight_clip')
+    kwargs = dict(use_bias=False, input_quantizer="ste_sign", kernel_quantizer="ste_sign",
+                                    kernel_constraint="weight_clip")
+    #kwargs = dict(use_bias=False, input_quantizer=None, kernel_quantizer=None, kernel_constraint=None)
 
     net = tf.keras.models.Sequential()
     net.add(QuantConv2D(nb_filters, (filter_size,filter_size), padding="same",
                                         activation='linear', input_shape=(ip_size[0], ip_size[1], 1),
-                                        kernel_quantizer='ste_sign', kernel_constraint='weight_clip', use_bias=False))
-    net.add(MaxPool2D(pool_size=(pool_size, pool_size)))
+                                        kernel_quantizer="ste_sign", kernel_constraint="weight_clip", use_bias=False))
     net.add(BatchNormalization(momentum=0.9))
+    net.add(MaxPool2D(pool_size=(pool_size, pool_size)))
+    #net.add(BatchNormalization(momentum=0.9))
     for i in range(nb_conv_layers):
         net.add(QuantConv2D(nb_filters, (filter_size,filter_size), padding="same", activation='linear', **kwargs))
-        net.add(MaxPool2D(pool_size=(pool_size, pool_size)))
         net.add(BatchNormalization(momentum=0.9))
+        net.add(MaxPool2D(pool_size=(pool_size, pool_size)))
+        #net.add(BatchNormalization(momentum=0.9))
     #net.add(Dropout(0.3))
     net.add(Flatten())
     for i in range(nb_dense_layers):
@@ -61,7 +64,7 @@ def build_cnn(params, ip_size, nb_output, nb_cnn):
     net.add(QuantDense(nb_output, activation='linear', **kwargs))
     net.add(BatchNormalization(momentum=0.9))
     net.add(Activation('softmax'))
-    net = BinaryResNetE18(input_shape=(ip_size[0], ip_size[1], 1), weights=None, num_classes=nb_output)
+    #net = BinaryResNetE18(input_shape=(ip_size[0], ip_size[1], 1), weights=None, num_classes=nb_output)
     net.summary()
     return net
 
@@ -117,7 +120,7 @@ def network_fit(params, features, labels, nb_output, nb_cnn=''):
     print("Fit the CNN")
     history = network.fit( features, labels, epochs=params.num_epochs, batch_size=batchsize,
                                 shuffle=True, verbose=2, class_weight=class_w,
-                                validation_split=params.validation_split) #, callbacks=[callback])
+                                validation_split=params.validation_split, callbacks=[callback])
     return network, history
 
 def obj_func_cnn(args):

@@ -197,20 +197,22 @@ if __name__ == '__main__':
     # the path to the directories in which the results, the models and the features will be saved
     result_dir = '/home/ndewinter/results/'
     model_dir = '/home/ndewinter/models/'
-    feature_dir = '/home/ndewinter/features/'
+    feature_dir = '/storage/features/'
     if not os.path.isdir(result_dir):
         os.mkdir(result_dir)
     if not os.path.isdir(model_dir):
         os.mkdir(model_dir)
     if not os.path.isdir(feature_dir):
         os.mkdir(feature_dir)
-    model_name = "cnn2" # one of: batmen, cnn2, hybrid_cnn_svm, hybrid_cnn_xgboost,
+    model_name = "hybrid_cnn_xgboost" # one of: batmen, cnn2, hybrid_cnn_svm, hybrid_cnn_xgboost,
     # hybrid_call_svm, hybrid_call_xgboost
     
     if on_GPU:
+        pass
         # needed to run tensorflow on GPU
         config = tf.compat.v1.ConfigProto()
         config.gpu_options.allow_growth = True
+        config.gpu_options.per_process_gpu_memory_fraction = 0.4
         session = tf.compat.v1.InteractiveSession(config=config)
     else:
         # needed to run tensorflow on CPU
