@@ -208,7 +208,6 @@ if __name__ == '__main__':
     # hybrid_call_svm, hybrid_call_xgboost
     
     if on_GPU:
-        pass
         # needed to run tensorflow on GPU
         config = tf.compat.v1.ConfigProto()
         config.gpu_options.allow_growth = True
