@@ -1,0 +1,38 @@
+Binary model :
+
+1 thread :
+
+Features computation time 41.98604702949524
+Detection time 30.435093641281128
+Classification time 6.7381651401519775
+NMS computation time 0.5290722846984863
+
+
+4 threads :
+
+Features computation time 43.444761753082275
+Detection time 20.566736221313477
+Classification time 6.223673582077026
+NMS computation time 0.5420756340026855
+
+
+Float model :
+
+1 thread :
+
+Features computation time 39.94078803062439
+Detection time 143.9951946735382
+Classification time 7.881163597106934
+NMS computation time 0.5238473415374756
+
+
+4 threads :
+
+Features computation time 41.45241189002991
+Detection time 92.83287334442139
+Classification time 7.9235405921936035
+NMS computation time 0.5437407493591309
+
+
+XGBoost with 500 estimators on 110 seconds file : 18.130516290664673
+XGBoost with 500 estimators on 3 seconds file : 0.5725367069244385

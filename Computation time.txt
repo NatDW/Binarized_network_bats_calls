@@ -1,0 +1,136 @@
+Binarized model (3B, 64 bits) :
+
+1 thread :
+
+Features computation time 1.2941536903381348
+Detection time 2.6558406352996826
+Classification time 0.34482526779174805
+NMS computation time 0.042643070220947266
+
+4 threads :
+
+eatures computation time 1.2937250137329102
+Detection time 1.7691104412078857
+Classification time 0.33379054069519043
+NMS computation time 0.042296648025512695 
+
+Binarized model benchmark result (tflite file) :
+
+Inference timings in us: Init: 87075, First inference: 16506, Warmup (avg): 5709.59, Inference (avg): 5395.73 (5,4 ms baisse de +-79%)
+Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+Peak memory footprint (MB): init=0 overall=1.93359 (baisse de +-54%)
+
+
+
+
+Float model (3B, 64 bits) :
+
+1 thread
+
+Features computation time 1.352945327758789
+Detection time 11.84360933303833 
+Classification time 0.40267348289489746
+NMS time 0.04212212562561035
+
+4 threads :
+
+Features computation time 1.4446680545806885
+Detection time 6.075149059295654
+Classification time 0.4382624626159668
+NMS computation time 0.04654955863952637  
+
+
+Float model benchmark result (tflite file) :
+
+Inference timings in us: Init: 96172, First inference: 62696, Warmup (avg): 29762.6, Inference (avg): 25961 (25,96 ms)
+Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+Peak memory footprint (MB): init=0 overall=4.21875
+
+
+Binary model (400, 64 bits) :
+
+1 thread:
+
+Features computation time 0.3274998664855957
+Detection time 1.0640294551849365
+Classification time 0.1987471580505371
+NMS computation time 0.01923203468322754
+
+Max processor = 32%, Max RAM = 624,3 MB
+
+4 threads:
+
+Features computation time 0.3244137763977051
+Detection time 0.6599433422088623
+Classification time 0.2038557529449463
+NMS computation time 0.01890707015991211
+
+Max processor = 33%, Max RAM = 624,7 MB
+
+
+Inference timings in us: Init: 74926, First inference: 13455, Warmup (avg): 866.864, Inference (avg): 997.263
+Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+Memory footprint delta from the start of the tool (MB): init=2.81641 overall=3.23828
+
+
+Float model (400, 64 bits) :
+
+1 thread :
+
+Features computation time 0.3353762626647949
+Detection time 4.90274977684021
+Classification time 0.22440767288208008
+NMS computation time 0.020476818084716797
+
+Max processor = 32%, Max RAM = 618,3 MB
+
+4 threads :
+
+Features computation time 0.33004164695739746
+Detection time 3.0258822441101074
+Classification time 0.21866774559020996
+NMS computation time 0.01932072639465332
+
+Max processor = 90%, Max RAM = 617,6 MB
+
+Inference timings in us: Init: 16950, First inference: 28623, Warmup (avg): 2509.3, Inference (avg): 2184.47
+Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+Memory footprint delta from the start of the tool (MB): init=3.16406 overall=4.41797
+
+
+Binary model (zero 2w, 64 bits) :
+
+1 thread :
+
+Features computation time  2.2852306365966797
+Detection time  3.241356611251831
+
+Inference timings in us: Init: 4064, First inference: 7556, Warmup (avg): 3990.56, Inference (avg): 3955.09 (1 thread)
+Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+Memory footprint delta from the start of the tool (MB): init=0.929688 overall=3.89062
+
+4 threads :
+
+Features computation time  2.2343733310699463
+Detection time  2.187389612197876
+
+Inference timings in us: Init: 7875, First inference: 9361, Warmup (avg): 2310, Inference (avg): 2172.88 (4 threads)
+
+
+Float model (zero 2w, 64 bits) :
+
+1 thread :
+
+Features computation time  2.242546558380127
+Detection time  13.900405168533325
+
+Inference timings in us: Init: 9689, First inference: 22482, Warmup (avg): 12279.6, Inference (avg): 11497.3 (1 thread)
+Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+Memory footprint delta from the start of the tool (MB): init=3.14844 overall=4.61328
+
+4 threads :
+
+Features computation time  2.3814587593078613
+Detection time  6.805132627487183
+
+Inference timings in us: Init: 11626, First inference: 9612, Warmup (avg): 3899.21, Inference (avg): 3700.86 (4 threads)
