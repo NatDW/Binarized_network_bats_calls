@@ -1,0 +1,29 @@
+Binarized model :
+
+Features computation time 1.688821792602539
+Detection time 14.166021823883057
+Classification time 0.5038843154907227
+NMS time 0.04310297966003418
+
+Binarized model benchmark result (tflite file) :
+
+Inference timings in us: Init: 87075, First inference: 16506, Warmup (avg): 5709.59, Inference (avg): 5395.73 (5,4 ms baisse de +-79%)
+Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+Peak memory footprint (MB): init=0 overall=1.93359 (baisse de +-54%)
+
+
+
+
+Float model :
+
+Features computation time 1.703869342803955
+Detection time 13.13846206665039
+Classification time 0.49356889724731445
+NMS time 0.04040265083312988
+
+
+Float model benchmark result (tflite file) :
+
+Inference timings in us: Init: 96172, First inference: 62696, Warmup (avg): 29762.6, Inference (avg): 25961 (25,96 ms)
+Note: as the benchmark tool itself affects memory footprint, the following is only APPROXIMATE to the actual memory footprint of the model at runtime. Take the information at your discretion.
+Peak memory footprint (MB): init=0 overall=4.21875
