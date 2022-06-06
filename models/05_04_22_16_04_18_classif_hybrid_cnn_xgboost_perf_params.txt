@@ -1,0 +1,60 @@
+{'nb_conv_layers': 2, 'nb_dense_layers': 2, 'nb_filters': 56, 'filter_size': 3, 'pool_size': 2, 'nb_dense_nodes': 384, 'dropout_proba': 0.7, 'learn_rate_adam': 0.0013894954943731374, 'beta_1': 0.95, 'beta_2': 0.999, 'epsilon': 1e-08, 'min_delta': 0.0005, 'patience': 20, 'batchsize': 320, 'eta': 0.08474262150602366, 'min_child_weight': 3, 'max_depth': 7, 'n_estimators': 250, 'gamma_xgb': 0.01, 'subsample': 0.7, 'scale_pos_weight': 1.5, 'win_size': 0.23, 'chunk_size': 0, 'max_freq': 270, 'min_freq': 10, 'mean_log_mag': 0.5, 'slice_scale': 0.02322, 'overlap': 0.75, 'crop_spec': True, 'denoise': True, 'smooth_spec': True, 'nms_win_size': 21, 'smooth_op_prediction_sigma': 1.0335917312661498, 'num_hnm': 0}
+--------------
+Confusion matrix detect + classif
+--------------
+[[1288132      26     993    1991     246     397      89     280]
+ [      3     105       0       1       0       0       0       0]
+ [    150      21    1459      55      39      17       3       3]
+ [    212       2      25    1771       9      65      17      19]
+ [     45      18      58      31     289      16       2      21]
+ [    109       0      17      93      28     623       6       2]
+ [     13       1      13      36       6      42      61       0]
+ [     76       0       2      33       0       6       0     277]]
+--------------
+GLOBAL detect + classif
+--------------
+Average Accuracy 0.9989721151816489
+Average Precision 0.5527373071783942
+Average Recall 0.7500076028487475
+Average F1 0.629785748262673
+Average BCR 0.8683351491999114
+KAPPA 0.647964946286224
+CEN 0.007404220952496124
+
+--------------
+Confusion matrix detect
+--------------
+[[1288132    4022]
+ [    608    5292]]
+--------------
+Class 1 detect
+--------------
+Accuracy 0.9964331221967653
+Precision 0.5681769379428817
+Recall 0.8969491525423728
+F1 0.6956750361509136
+BCR 0.9469182602283618
+
+--------------
+Confusion matrix classif
+--------------
+[[ 105    0    1    0    0    0    0]
+ [  21 1459   55   39   17    3    3]
+ [   2   25 1771    9   65   17   19]
+ [  18   58   31  289   16    2   21]
+ [   0   17   93   28  623    6    2]
+ [   1   13   36    6   42   61    0]
+ [   0    2   33    0    6    0  277]]
+--------------
+GLOBAL classif
+--------------
+Average Accuracy 0.9618291761148904
+Average Precision 0.807530945083464
+Average Recall 0.794511274331429
+Average F1 0.7909728921220361
+Average BCR 0.8846508027846014
+KAPPA 0.8197116103943076
+CEN 0.2053243800003037
+features computation time 737.473 (secs) = 12.29 min 
+run time without features 3549.688 (secs) = 59.16 min 
+total run time 4287.161 (secs) = 71.45 min 

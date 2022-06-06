@@ -1,0 +1,22 @@
+Binary model (1 thread) :
+
+Features computation time  2.2852306365966797
+Detection time  3.241356611251831
+
+
+Binary model (4 threads) :
+
+Features computation time  2.2343733310699463
+Detection time  2.187389612197876
+
+
+Float model (1 thread) :
+
+Features computation time  2.242546558380127
+Detection time  13.900405168533325
+
+
+Float model (4 threads) :
+
+Features computation time  2.3814587593078613
+Detection time  6.805132627487183
